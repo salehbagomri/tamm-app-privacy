@@ -6,55 +6,66 @@
   <title>حذف الحساب - تمّ</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
-      background: #f5f7fa;
+      background: #f0f4f8;
       color: #333;
       line-height: 1.8;
+      font-size: 16px;
     }
+
     .header {
       background: linear-gradient(135deg, #1a73e8, #0d47a1);
       color: white;
       padding: 40px 20px;
       text-align: center;
     }
-    .header h1 { font-size: 2rem; margin-bottom: 8px; }
-    .header p { opacity: 0.85; font-size: 1rem; }
+    .header h1 { font-size: clamp(1.4rem, 4vw, 2rem); margin-bottom: 8px; }
+    .header p { opacity: 0.85; font-size: clamp(0.9rem, 2.5vw, 1rem); }
+
     .container {
       max-width: 760px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 30px auto;
+      padding: 0 16px;
     }
+
     .card {
       background: white;
-      border-radius: 12px;
-      padding: 32px;
-      margin-bottom: 24px;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     }
+
     h2 {
       color: #1a73e8;
-      font-size: 1.3rem;
-      margin-bottom: 16px;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      margin-bottom: 18px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
-    .steps { counter-reset: steps; padding: 0; list-style: none; }
+
+    /* ─── Steps Fix ─── */
+    .steps {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
     .steps li {
-      counter-increment: steps;
-      padding: 12px 12px 12px 48px;
-      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
       border-bottom: 1px solid #f0f0f0;
     }
     .steps li:last-child { border-bottom: none; }
-    .steps li::before {
-      content: counter(steps);
-      position: absolute;
-      right: 12px;
-      top: 12px;
-      width: 28px;
-      height: 28px;
+
+    .step-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
       background: #1a73e8;
       color: white;
       border-radius: 50%;
@@ -63,38 +74,59 @@
       justify-content: center;
       font-weight: bold;
       font-size: 0.85rem;
+      margin-top: 2px;
     }
-    .data-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+
+    .step-text { flex: 1; }
+
+    /* ─── Table ─── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: clamp(0.82rem, 2.2vw, 0.95rem);
+    }
     .data-table th {
       background: #1a73e8;
       color: white;
-      padding: 12px;
+      padding: 10px 12px;
       text-align: right;
     }
-    .data-table td { padding: 10px 12px; border-bottom: 1px solid #eee; }
+    .data-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #eee;
+      vertical-align: middle;
+    }
     .data-table tr:nth-child(even) { background: #f9f9f9; }
+
     .badge-deleted {
       background: #fce8e6;
       color: #c5221f;
       padding: 3px 10px;
       border-radius: 20px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+      white-space: nowrap;
     }
     .badge-kept {
       background: #e8f5e9;
       color: #2e7d32;
       padding: 3px 10px;
       border-radius: 20px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+      white-space: nowrap;
     }
+
+    /* ─── Warning ─── */
     .warning {
       background: #fff8e1;
       border-right: 4px solid #f9a825;
-      padding: 16px;
+      padding: 14px 16px;
       border-radius: 8px;
       margin-top: 16px;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
+
+    /* ─── Contact ─── */
     .contact-box {
       background: #e8f0fe;
       border-radius: 10px;
@@ -106,13 +138,44 @@
       color: #1a73e8;
       font-weight: bold;
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: clamp(0.95rem, 3vw, 1.1rem);
+      word-break: break-all;
     }
+    .contact-box p { color: #555; font-size: 0.88rem; margin-top: 10px; }
+
+    /* ─── Footer ─── */
     .footer {
       text-align: center;
-      padding: 30px 20px;
+      padding: 28px 16px;
       color: #888;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
+    }
+    .footer a { color: #1a73e8; text-decoration: none; }
+
+    /* ─── Responsive table ─── */
+    @media (max-width: 500px) {
+      .data-table thead { display: none; }
+      .data-table tr {
+        display: block;
+        margin-bottom: 12px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .data-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #f0f0f0;
+        gap: 8px;
+      }
+      .data-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #555;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
     }
   </style>
 </head>
@@ -126,16 +189,31 @@
 <div class="container">
 
   <div class="card">
-    <h2>📋 كيفية طلب حذف حسابك</h2>
+    <h2>📋 كيفية طلب حذف حسابك من داخل التطبيق</h2>
     <ul class="steps">
-      <li>افتح تطبيق <strong>تمّ</strong> على جهازك</li>
-      <li>سجّل دخولك إلى حسابك</li>
-      <li>اذهب إلى <strong>الملف الشخصي</strong> من القائمة السفلية</li>
-      <li>اضغط على <strong>إعدادات الحساب</strong></li>
-      <li>اختر <strong>حذف الحساب</strong> وأكّد طلبك</li>
+      <li>
+        <div class="step-num">1</div>
+        <div class="step-text">افتح تطبيق <strong>تمّ</strong> على جهازك</div>
+      </li>
+      <li>
+        <div class="step-num">2</div>
+        <div class="step-text">سجّل دخولك إلى حسابك</div>
+      </li>
+      <li>
+        <div class="step-num">3</div>
+        <div class="step-text">اذهب إلى <strong>حسابي</strong> من القائمة السفلية</div>
+      </li>
+      <li>
+        <div class="step-num">4</div>
+        <div class="step-text">اضغط على زر <strong>حذف الحساب</strong> في أسفل الصفحة</div>
+      </li>
+      <li>
+        <div class="step-num">5</div>
+        <div class="step-text">أكّد طلبك — سيتم حذف حسابك وجميع بياناتك فوراً</div>
+      </li>
     </ul>
     <div class="warning">
-      ⚠️ بدلاً من ذلك، يمكنك إرسال طلب حذف مباشر عبر البريد الإلكتروني أدناه.
+      ⚠️ بدلاً من ذلك، يمكنك إرسال طلب حذف مباشرة عبر البريد الإلكتروني أدناه.
     </div>
   </div>
 
@@ -143,55 +221,59 @@
     <h2>📧 طلب الحذف عبر البريد الإلكتروني</h2>
     <div class="contact-box">
       <p>أرسل بريداً إلكترونياً إلى:</p>
-      <a href="mailto:support@tamm-app.com?subject=طلب حذف الحساب">support@tamm-app.com</a>
-      <p style="margin-top:10px; color:#555; font-size:0.9rem;">
-        اذكر في رسالتك: <strong>اسمك الكامل + البريد المسجّل + سبب الحذف (اختياري)</strong>
-      </p>
+      <a href="mailto:s.bagomri@gmail.com?subject=طلب حذف الحساب - تمّ">s.bagomri@gmail.com</a>
+      <p>اذكر في رسالتك: <strong>اسمك الكامل + البريد المسجّل + سبب الحذف (اختياري)</strong></p>
     </div>
-    <p style="margin-top:14px; color:#666; font-size:0.9rem;">سيتم معالجة طلبك خلال <strong>7 أيام عمل</strong> وإرسال تأكيد بالبريد الإلكتروني.</p>
+    <p style="margin-top:14px; color:#666; font-size:0.9rem;">
+      سيتم معالجة طلبك خلال <strong>7 أيام عمل</strong> وإرسال تأكيد بالبريد الإلكتروني.
+    </p>
   </div>
 
   <div class="card">
     <h2>📊 ما الذي يتم حذفه والاحتفاظ به؟</h2>
     <table class="data-table">
-      <tr>
-        <th>نوع البيانات</th>
-        <th>الإجراء</th>
-        <th>المدة</th>
-      </tr>
-      <tr>
-        <td>الاسم والبريد الإلكتروني ورقم الهاتف</td>
-        <td><span class="badge-deleted">يُحذف فوراً</span></td>
-        <td>فور تأكيد الطلب</td>
-      </tr>
-      <tr>
-        <td>صورة الملف الشخصي</td>
-        <td><span class="badge-deleted">يُحذف فوراً</span></td>
-        <td>فور تأكيد الطلب</td>
-      </tr>
-      <tr>
-        <td>سجل الطلبات والخدمات</td>
-        <td><span class="badge-deleted">يُحذف فوراً</span></td>
-        <td>فور تأكيد الطلب</td>
-      </tr>
-      <tr>
-        <td>الرسائل والمحادثات</td>
-        <td><span class="badge-deleted">يُحذف فوراً</span></td>
-        <td>فور تأكيد الطلب</td>
-      </tr>
-      <tr>
-        <td>سجلات الفواتير والمدفوعات</td>
-        <td><span class="badge-kept">يُحتفظ به</span></td>
-        <td>5 سنوات (التزام قانوني)</td>
-      </tr>
+      <thead>
+        <tr>
+          <th>نوع البيانات</th>
+          <th>الإجراء</th>
+          <th>المدة</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="البيانات">الاسم والبريد الإلكتروني ورقم الهاتف</td>
+          <td data-label="الإجراء"><span class="badge-deleted">يُحذف فوراً</span></td>
+          <td data-label="المدة">فور تأكيد الطلب</td>
+        </tr>
+        <tr>
+          <td data-label="البيانات">صورة الملف الشخصي</td>
+          <td data-label="الإجراء"><span class="badge-deleted">يُحذف فوراً</span></td>
+          <td data-label="المدة">فور تأكيد الطلب</td>
+        </tr>
+        <tr>
+          <td data-label="البيانات">سجل الطلبات والخدمات</td>
+          <td data-label="الإجراء"><span class="badge-deleted">يُحذف فوراً</span></td>
+          <td data-label="المدة">فور تأكيد الطلب</td>
+        </tr>
+        <tr>
+          <td data-label="البيانات">الرسائل والمحادثات</td>
+          <td data-label="الإجراء"><span class="badge-deleted">يُحذف فوراً</span></td>
+          <td data-label="المدة">فور تأكيد الطلب</td>
+        </tr>
+        <tr>
+          <td data-label="البيانات">سجلات الفواتير والمدفوعات</td>
+          <td data-label="الإجراء"><span class="badge-kept">يُحتفظ به</span></td>
+          <td data-label="المدة">5 سنوات (التزام قانوني)</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 
 </div>
 
 <div class="footer">
-  © 2025 تمّ — جميع الحقوق محفوظة |
-  <a href="index.html" style="color:#1a73e8;">سياسة الخصوصية</a>
+  © 2026 تمّ — جميع الحقوق محفوظة |
+  <a href="index.html">سياسة الخصوصية</a>
 </div>
 
 </body>
