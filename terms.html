@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="شروط الاستخدام لتطبيق تمّ - Terms of Use for Tamm App">
+    <meta name="author" content="Saleh Bagomri">
+    <title>شروط الاستخدام - تمّ | Terms of Use - Tamm</title>
+    <!-- Google Fonts for professional look - Alexandria and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0f172a; /* Slate 900 */
+            --secondary-color: #475569; /* Slate 600 */
+            --accent-color: #2563eb; /* Blue 600 */
+            --border-color: #e2e8f0; /* Slate 200 */
+            --bg-color: #f8fafc; /* Slate 50 */
+            --surface-color: #ffffff;
+            --text-color: #334155; /* Slate 700 */
+            --sidebar-width: 240px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Alexandria', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        .layout-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 32px;
+            margin-bottom: 48px;
+            gap: 20px;
+        }
+        .header-title h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 6px;
+        }
+        .header-title p {
+            font-size: 14px;
+            color: var(--secondary-color);
+        }
+        .language-toggle {
+            display: inline-flex;
+            background: #f1f5f9;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        .language-toggle button {
+            background: transparent;
+            color: var(--secondary-color);
+            border: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .language-toggle button.active {
+            background: var(--surface-color);
+            color: var(--primary-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .main-layout {
+            display: flex;
+            gap: 48px;
+        }
+        .sidebar {
+            width: var(--sidebar-width);
+            position: sticky;
+            top: 40px;
+            height: fit-content;
+            flex-shrink: 0;
+        }
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            border-right: 2px solid var(--border-color);
+        }
+        [dir="ltr"] .sidebar-nav {
+            border-right: none;
+            border-left: 2px solid var(--border-color);
+        }
+        .sidebar-nav a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            transition: all 0.2s;
+            border-right: 2px solid transparent;
+            margin-right: -2px;
+            text-align: right;
+            display: block;
+        }
+        [dir="ltr"] .sidebar-nav a {
+            border-right: none;
+            border-left: 2px solid transparent;
+            margin-right: 0;
+            margin-left: -2px;
+            text-align: left;
+        }
+        .sidebar-nav a:hover {
+            color: var(--primary-color);
+        }
+        .sidebar-nav a.active {
+            color: var(--accent-color);
+            border-right-color: var(--accent-color);
+            font-weight: 600;
+        }
+        [dir="ltr"] .sidebar-nav a.active {
+            border-left-color: var(--accent-color);
+        }
+        .content-area {
+            flex-grow: 1;
+            max-width: 780px;
+        }
+        .section {
+            margin-bottom: 56px;
+            scroll-margin-top: 40px;
+        }
+        .section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        .section h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 24px 0 10px;
+        }
+        .section p {
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: var(--text-color);
+            text-align: justify;
+        }
+        .section ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        .section ul li {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            position: relative;
+            padding-right: 18px;
+        }
+        [dir="ltr"] .section ul li {
+            padding-right: 0;
+            padding-left: 18px;
+        }
+        .section ul li::before {
+            content: "•";
+            color: var(--secondary-color);
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-weight: bold;
+        }
+        [dir="ltr"] .section ul li::before {
+            right: auto;
+            left: 0;
+        }
+        .section ul li strong {
+            color: var(--primary-color);
+        }
+        .callout-box {
+            background: #fafafa;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .callout-box h3 {
+            margin-top: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+        .callout-box ul {
+            margin-bottom: 0;
+        }
+        .callout-box p {
+            font-size: 14px;
+            color: var(--text-color);
+            margin-bottom: 12px;
+        }
+        .callout-box p:last-child {
+            margin-bottom: 0;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .contact-item {
+            background: #fafafa;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .contact-item-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--secondary-color);
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+        .contact-item-value {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 500;
+            word-break: break-all;
+        }
+        .contact-item-value a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .contact-item-value a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            margin-top: 80px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--secondary-color);
+        }
+        .footer p {
+            margin-bottom: 6px;
+        }
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .en {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .layout-wrapper { padding: 24px 16px; }
+            .header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 16px;
+                margin-bottom: 24px;
+                padding-bottom: 20px;
+            }
+            .main-layout {
+                flex-direction: column;
+                gap: 24px;
+            }
+            .sidebar {
+                width: 100%;
+                position: sticky;
+                top: 0;
+                background-color: var(--bg-color);
+                z-index: 100;
+                padding-top: 12px;
+                padding-bottom: 12px;
+                margin-top: -12px;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .sidebar-nav {
+                border-right: none;
+                border-left: none;
+                border-bottom: none;
+                flex-direction: row;
+                overflow-x: auto;
+                padding-bottom: 0;
+                gap: 8px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .sidebar-nav::-webkit-scrollbar {
+                display: none;
+            }
+            .sidebar-nav a {
+                border-right: none;
+                border-bottom: 2px solid transparent;
+                margin-right: 0;
+                padding: 6px 14px;
+                white-space: nowrap;
+                text-align: center;
+                font-size: 13px;
+            }
+            [dir="ltr"] .sidebar-nav a {
+                border-left: none;
+                margin-left: 0;
+                text-align: center;
+            }
+            .sidebar-nav a.active {
+                border-right-color: transparent;
+                border-bottom-color: var(--accent-color);
+            }
+            .section {
+                scroll-margin-top: 72px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout-wrapper">
+        <div class="header">
+            <!-- Header Arabic -->
+            <div class="header-title" id="arabicHeaderTitle">
+                <h1>تمّ</h1>
+                <p>خدمات التكييف والطاقة الشمسية — شروط الاستخدام</p>
+                <p style="font-size: 12px; margin-top: 6px; color: var(--secondary-color);">آخر تحديث: مايو 2026</p>
+            </div>
+            <!-- Header English -->
+            <div class="header-title en" id="englishHeaderTitle">
+                <h1>Tamm</h1>
+                <p>HVAC & Solar Energy Services — Terms of Use</p>
+                <p style="font-size: 12px; margin-top: 6px; color: var(--secondary-color);">Last Updated: May 2026</p>
+            </div>
+            <div class="language-toggle">
+                <button id="btnArabic" class="active" onclick="showArabic()">العربية</button>
+                <button id="btnEnglish" onclick="showEnglish()">English</button>
+            </div>
+        </div>
+
+        <div class="main-layout">
+            <!-- Sidebar Table of Contents (Arabic) -->
+            <aside class="sidebar" id="arabicSidebar">
+                <nav class="sidebar-nav">
+                    <a href="#ar-agreement" class="active">الموافقة على الشروط</a>
+                    <a href="#ar-accounts">حسابات المستخدمين</a>
+                    <a href="#ar-services">الخدمات والأسعار</a>
+                    <a href="#ar-hvac-solar">الصيانة والتركيب</a>
+                    <a href="#ar-payments">الطلبات والدفع</a>
+                    <a href="#ar-ip">الملكية الفكرية</a>
+                    <a href="#ar-conduct">الاستخدام المقبول</a>
+                    <a href="#ar-liability">إخلاء المسؤولية</a>
+                    <a href="#ar-termination">التعديل والإنهاء</a>
+                    <a href="#ar-law">القانون المطبق</a>
+                    <a href="#ar-contact">الاتصال بنا</a>
+                </nav>
+            </aside>
+
+            <!-- Sidebar Table of Contents (English) -->
+            <aside class="sidebar en" id="englishSidebar">
+                <nav class="sidebar-nav">
+                    <a href="#en-agreement">Agreement</a>
+                    <a href="#en-accounts">User Accounts</a>
+                    <a href="#en-services">Services & Pricing</a>
+                    <a href="#en-hvac-solar">HVAC & Solar Terms</a>
+                    <a href="#en-payments">Orders & Payments</a>
+                    <a href="#en-ip">Intellectual Property</a>
+                    <a href="#en-conduct">Acceptable Use</a>
+                    <a href="#en-liability">Disclaimer</a>
+                    <a href="#en-termination">Modifications</a>
+                    <a href="#en-law">Governing Law</a>
+                    <a href="#en-contact">Contact Us</a>
+                </nav>
+            </aside>
+
+            <div class="content-area">
+                <!-- Arabic Version -->
+                <div class="content ar" id="arabicContent">
+                    <div class="section" id="ar-agreement">
+                        <h2>الموافقة على الشروط</h2>
+                        <p>مرحباً بك في تطبيق تمّ. باستخدامك للتطبيق أو تسجيل حساب فيه، فإنك توافق بالكامل وبدون قيد أو شرط على هذه الشروط والأحكام. إذا كنت لا توافق على هذه الشروط، يرجى التوقف عن استخدام التطبيق فوراً.</p>
+                        <p>تُنظم هذه الشروط العلاقة التعاقدية بين مستخدمي التطبيق (عملاء وفنيين) وبين إدارة منصة تمّ بخصوص الخدمات الميدانية لمنتجات التكييف والطاقة الشمسية.</p>
+                    </div>
+
+                    <div class="section" id="ar-accounts">
+                        <h2>حسابات المستخدمين والتسجيل</h2>
+                        <p>لاستخدام بعض ميزات التطبيق، يجب عليك إنشاء حساب شخصي عبر توفير بيانات صحيحة ودقيقة.</p>
+                        <ul>
+                            <li><strong>مسؤولية الحساب:</strong> تقع على عاتقك المسؤولية الكاملة عن حماية سرية كلمة المرور الخاصة بك وعن جميع الأنشطة التي تحدث تحت حسابك.</li>
+                            <li><strong>دقة المعلومات:</strong> تلتزم بتوفير رقم هاتف صحيح وعنوان دقيق لتسهيل وصول الفنيين إليك لتنفيذ طلبات الصيانة والتركيب.</li>
+                            <li><strong>حذف الحساب:</strong> يحق لك طلب حذف حسابك وبياناتك الشخصية بشكل نهائي في أي وقت من خلال خيار "حذف الحساب" المتاح في إعدادات التطبيق.</li>
+                        </ul>
+                    </div>
+
+                    <div class="section" id="ar-services">
+                        <h2>الخدمات والمنتجات والأسعار</h2>
+                        <p>يقوم تطبيق تمّ بعرض وبيع أجهزة ومستلزمات التكييف ومنظومات الطاقة الشمسية، بالإضافة إلى توفير خدمات التركيب والصيانة الفنية الميدانية.</p>
+                        <ul>
+                            <li><strong>توصيف المنتجات:</strong> نبذل قصارى جهدنا لضمان دقة معلومات المنتجات والصور والمواصفات المعروضة، ولكن قد تحدث فروقات طفيفة طبقاً للتحديثات المصنعية.</li>
+                            <li><strong>تسعير الخدمات:</strong> يتم تحديد تكاليف خدمات الصيانة والتركيب بناءً على الفحص الميداني أو الأسعار المعلنة مسبقاً في التطبيق، وتخضع الأسعار للتحديث بشكل دوري.</li>
+                        </ul>
+                    </div>
+
+                    <div class="section" id="ar-hvac-solar">
+                        <h2>شروط صيانة وتركيب أجهزة التكييف والطاقة الشمسية</h2>
+                        <div class="callout-box">
+                            <h3>التزامات العميل عند طلب خدمة ميدانية</h3>
+                            <ul>
+                                <li>تهيئة مكان العمل وتوفير مسار آمن وصالح لوصول الفنيين والقيام بعمليات التركيب أو الصيانة.</li>
+                                <li>تواجد العميل أو شخص بالغ مفوض من قبله في الموقع أثناء قيام الفنيين بمهامهم لمعاينة العمل والموافقة على الإصلاحات.</li>
+                                <li>الحصول على الموافقات أو التراخيص اللازمة من مالك العقار أو السلطات المحلية إن تطلب الأمر قبل البدء بأعمال التركيب.</li>
+                            </ul>
+                        </div>
+                        <p>لا تتحمل المنصة مسؤولية أي عيوب أو أضرار ناتجة عن عدم كفاءة أو خلل في التمديدات المسبقة الموجودة في موقع العميل والتي لم يقم فنيو تمّ بتركيبها.</p>
+                    </div>
+
+                    <div class="section" id="ar-payments">
+                        <h2>الطلب وعمليات الدفع</h2>
+                        <p>عند تأكيدك لطلب شراء أو طلب صيانة عبر التطبيق، فإنك تلتزم بسداد القيمة المالية المحددة.</p>
+                        <ul>
+                            <li><strong>طرق الدفع:</strong> نوفر خيارات دفع متعددة تشمل الدفع نقداً عند الاستلام (COD)، أو الدفع عبر شبكات التحويلات المالية المحلية المعتمدة في اليمن.</li>
+                            <li><strong>إلغاء الطلب:</strong> يحق لك إلغاء الطلب قبل تحركه مع الفني أو شركة التوصيل. وفي حال تم إلغاء الطلب بعد خروج الفني للموقع، قد يتم فرض رسوم فحص وانتقال رمزية.</li>
+                        </ul>
+                    </div>
+
+                    <div class="section" id="ar-ip">
+                        <h2>حقوق الملكية الفكرية</h2>
+                        <p>جميع حقوق الملكية الفكرية للعلامة التجارية "تمّ" والشعارات والنصوص والبرمجيات والواجهات الرسومية وقواعد البيانات المستخدمة في التطبيق هي ملك حصري للمطور والمنصة، ولا يجوز نسخها أو إعادة استخدامها بأي شكل دون إذن خطي مسبق.</p>
+                    </div>
+
+                    <div class="section" id="ar-conduct">
+                        <h2>السلوك المقبول والاستخدام المحظور</h2>
+                        <div class="callout-box">
+                            <h3>الممارسات المحظورة في استخدام التطبيق</h3>
+                            <ul>
+                                <li>استخدام حسابات وهمية أو انتحال شخصيات أخرى عند طلب الخدمات.</li>
+                                <li>محاولة اختراق النظام الأمني للتطبيق أو الوصول لقواعد البيانات السحابية (Supabase) بشكل غير مصرح به.</li>
+                                <li>الإساءة أو التعامل غير اللائق مع الفنيين المكلفين بتنفيذ الخدمات الميدانية.</li>
+                                <li>إدخال طلبات وهمية أو متكررة بهدف تعطيل عمل المنصة.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="section" id="ar-liability">
+                        <h2>إخلاء المسؤولية وحدودها</h2>
+                        <p>يتم تقديم التطبيق وخدماته السحابية "كما هي" دون ضمانات صريحة أو ضمنية بخصوص استمرارية الخدمة بنسبة 100% دون انقطاع تقني خارج عن إرادتنا.</p>
+                        <p>تقتصر مسؤولية تمّ عن أي خسائر ناتجة بشكل مباشر عن عيوب في الخدمات أو المنتجات على القيمة المالية المدفوعة من العميل مقابل تلك الخدمة أو المنتج تحديداً.</p>
+                    </div>
+
+                    <div class="section" id="ar-termination">
+                        <h2>تعديل الشروط وإنهاء الخدمة</h2>
+                        <p>نحتفظ بالحق في تعديل هذه الشروط والأحكام في أي وقت. وسيتم نشر الشروط المحدثة على هذه الصفحة مع تعديل تاريخ "آخر تحديث". يُعد استمرارك في استخدام التطبيق بعد نشر التعديلات موافقة ضمتية عليها.</p>
+                        <p>يحق لإدارة منصة تمّ تعليق أو إغلاق حسابك فوراً في حال مخالفتك لهذه الشروط أو إساءة استخدام التطبيق.</p>
+                    </div>
+
+                    <div class="section" id="ar-law">
+                        <h2>القانون الواجب التطبيق وحل النزاعات</h2>
+                        <p>تخضع هذه الشروط والأحكام وتُفسر وفقاً للقوانين واللوائح النافذة في الجمهورية اليمنية. وفي حال نشوء أي نزاع، يتم السعي أولاً لحله ودياً مع خدمة العملاء والإدارة، وإلا يتم رفعه إلى الجهات القضائية المختصة في حضرموت.</p>
+                    </div>
+
+                    <div class="section" id="ar-contact">
+                        <h2>الاتصال بنا</h2>
+                        <p>إذا كان لديكم أي استفسارات أو شكاوى بخصوص شروط الاستخدام هذه، يرجى التواصل معنا عبر القنوات التالية:</p>
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <div class="contact-item-label">البريد الإلكتروني / الدعم الفني</div>
+                                <div class="contact-item-value"><a href="mailto:s.bagomri@gmail.com">s.bagomri@gmail.com</a></div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-label">الدعم عبر الواتساب</div>
+                                <div class="contact-item-value"><a href="https://wa.me/967770727055" dir="ltr">+967 770727055</a></div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-label">الموقع الإلكتروني</div>
+                                <div class="contact-item-value"><a href="https://www.bagomri.com" target="_blank">www.bagomri.com</a></div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-label">العنوان</div>
+                                <div class="contact-item-value">حضرموت، الجمهورية اليمنية</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- English Version -->
+                <div class="content en" id="englishContent">
+                    <div class="section" id="en-agreement">
+                        <h2>Agreement to Terms</h2>
+                        <p>Welcome to Tamm App. By accessing, downloading, or registering an account within the app, you fully and unconditionally agree to be bound by these Terms of Use. If you do not agree to these terms, please immediately stop using the application.</p>
+                        <p>These terms govern the contractual relationship between users (customers and technicians) and Tamm platform management regarding field installation and maintenance of HVAC and solar systems.</p>
+                    </div>
+
+                    <div class="section" id="en-accounts">
+                        <h2>User Accounts & Registration</h2>
+                        <p>To use specific features within the app, you must create a personal account by providing accurate, up-to-date information.</p>
+                        <ul>
+                            <li><strong>Account Responsibility:</strong> You are fully responsible for safeguarding the confidentiality of your password and for all activities that occur under your account.</li>
+                            <li><strong>Information Accuracy:</strong> You agree to provide a valid phone number and precise address coordinates to enable technicians to locate you for service delivery.</li>
+                            <li><strong>Account Deletion:</strong> You have the right to request permanent deletion of your account and all associated personal data at any time via the "Delete Account" setting in the app.</li>
+                        </ul>
+                    </div>
+
+                    <div class="section" id="en-services">
+                        <h2>Services, Products & Pricing</h2>
+                        <p>Tamm App displays and sells HVAC equipment, solar power system components, and provides on-site technical installation and maintenance services.</p>
+                        <ul>
+                            <li><strong>Product Specifications:</strong> We strive to ensure specifications, photos, and descriptions are accurate. However, slight variations may occur due to manufacturer updates.</li>
+                            <li><strong>Service Pricing:</strong> Repair and installation service fees are determined based on field inspection or pre-declared rates in the app. Prices are subject to periodic updates.</li>
+                        </ul>
+                    </div>
+
+                    <div class="section" id="en-hvac-solar">
+                        <h2>HVAC & Solar Installation Terms</h2>
+                        <div class="callout-box">
+                            <h3>Customer Obligations for Field Services</h3>
+                            <ul>
+                                <li>Prepare the working area and provide safe, clean access for technicians to carry out installation or maintenance.</li>
+                                <li>The customer or an authorized adult must be present on-site to inspect the work and authorize necessary repairs.</li>
+                                <li>Obtain any required permits or permissions from landlords or local authorities before starting installation work.</li>
+                            </ul>
+                        </div>
+                        <p>Tamm is not liable for any defects or damages resulting from pre-existing structural issues or faulty pre-installed wiring/tubing not configured by Tamm technicians.</p>
+                    </div>
+
+                    <div class="section" id="en-payments">
+                        <h2>Orders & Payments</h2>
+                        <p>By confirming a purchase order or scheduling a service, you agree to pay the specified financial amount.</p>
+                        <ul>
+                            <li><strong>Payment Methods:</strong> We support multiple payment methods, including Cash on Delivery (COD) and localized money transfer networks within Yemen.</li>
+                            <li><strong>Order Cancellation:</strong> You can cancel an order before the technician or delivery agent is dispatched. If cancelled after dispatch, a nominal inspection and travel fee may apply.</li>
+                        </ul>
+                    </div>
+
+                    <div class="section" id="en-ip">
+                        <h2>Intellectual Property Rights</h2>
+                        <p>All intellectual property rights regarding the "Tamm" brand name, logos, text, software, user interfaces, database structures, and assets belong exclusively to the developer and platform. No content may be copied or reused without prior written consent.</p>
+                    </div>
+
+                    <div class="section" id="en-conduct">
+                        <h2>Acceptable Use & Prohibited Conduct</h2>
+                        <div class="callout-box">
+                            <h3>Prohibited Practices</h3>
+                            <ul>
+                                <li>Using fake profiles or impersonating others when ordering services.</li>
+                                <li>Attempting to breach security barriers or gain unauthorized access to our cloud database (Supabase).</li>
+                                <li>Abusing or mistreating assigned field technicians.</li>
+                                <li>Submitting fake or spam orders to disrupt platform operations.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="section" id="en-liability">
+                        <h2>Disclaimer & Limitation of Liability</h2>
+                        <p>The app and its database services are provided "as is" without express or implied warranties regarding 100% uninterrupted uptime or technical continuity due to factors beyond our control.</p>
+                        <p>Tamm's total liability for any direct losses arising from service defects or product issues is strictly limited to the amount paid by the customer for that specific service or product.</p>
+                    </div>
+
+                    <div class="section" id="en-termination">
+                        <h2>Modifications & Termination</h2>
+                        <p>We reserve the right to modify these terms at any time. Updated versions will be posted on this page with an updated "Last Updated" date. Continued use of the app signifies agreement to modified terms.</p>
+                        <p>We reserve the right to suspend or terminate accounts that breach these terms or engage in fraudulent activities.</p>
+                    </div>
+
+                    <div class="section" id="en-law">
+                        <h2>Governing Law & Dispute Resolution</h2>
+                        <p>These terms shall be governed by and construed in accordance with the laws of the Republic of Yemen. Any dispute shall first be sought for amicable resolution through customer service, failing which it shall be referred to competent courts in Hadhramout, Yemen.</p>
+                    </div>
+
+                    <div class="section" id="en-contact">
+                        <h2>Contact Us</h2>
+                        <p>If you have any questions or concerns regarding these Terms of Use, please contact us using the channels below:</p>
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <div class="contact-item-label">Email / Technical Support</div>
+                                <div class="contact-item-value"><a href="mailto:s.bagomri@gmail.com">s.bagomri@gmail.com</a></div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-label">WhatsApp Support</div>
+                                <div class="contact-item-value"><a href="https://wa.me/967770727055" dir="ltr">+967 770727055</a></div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-label">Website</div>
+                                <div class="contact-item-value"><a href="https://www.bagomri.com" target="_blank">www.bagomri.com</a></div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-label">Address</div>
+                                <div class="contact-item-value">Hadhramout, Yemen</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Arabic Footer -->
+        <div class="footer" id="arabicFooter">
+            <p>إصدار التطبيق: 1.2.0</p>
+            <p>آخر تحديث: مايو 2026</p>
+            <p>تمّ — خدمات التكييف والطاقة الشمسية</p>
+            <p style="margin-top: 20px;">&copy; 2026 Saleh Bagomri - جميع الحقوق محفوظة</p>
+        </div>
+
+        <!-- English Footer -->
+        <div class="footer en" id="englishFooter">
+            <p>App Version: 1.2.0</p>
+            <p>Last Updated: May 2026</p>
+            <p>Tamm — HVAC & Solar Energy Services</p>
+            <p style="margin-top: 20px;">&copy; 2026 Saleh Bagomri - All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script>
+        function showArabic() {
+            document.getElementById('arabicContent').style.display = 'block';
+            document.getElementById('englishContent').style.display = 'none';
+            document.getElementById('arabicSidebar').style.display = 'block';
+            document.getElementById('englishSidebar').style.display = 'none';
+            document.getElementById('arabicHeaderTitle').style.display = 'block';
+            document.getElementById('englishHeaderTitle').style.display = 'none';
+            document.getElementById('arabicFooter').style.display = 'block';
+            document.getElementById('englishFooter').style.display = 'none';
+            
+            document.getElementById('btnArabic').classList.add('active');
+            document.getElementById('btnEnglish').classList.remove('active');
+            document.body.setAttribute('dir', 'rtl');
+            document.documentElement.setAttribute('lang', 'ar');
+            updateActiveLinkOnLanguageChange();
+        }
+        
+        function showEnglish() {
+            document.getElementById('arabicContent').style.display = 'none';
+            document.getElementById('englishContent').style.display = 'block';
+            document.getElementById('arabicSidebar').style.display = 'none';
+            document.getElementById('englishSidebar').style.display = 'block';
+            document.getElementById('arabicHeaderTitle').style.display = 'none';
+            document.getElementById('englishHeaderTitle').style.display = 'block';
+            document.getElementById('arabicFooter').style.display = 'none';
+            document.getElementById('englishFooter').style.display = 'block';
+            
+            document.getElementById('btnArabic').classList.remove('active');
+            document.getElementById('btnEnglish').classList.add('active');
+            document.body.setAttribute('dir', 'ltr');
+            document.documentElement.setAttribute('lang', 'en');
+            updateActiveLinkOnLanguageChange();
+        }
+
+        // Highlight active sidebar links on scroll using IntersectionObserver
+        const observerOptions = {
+            root: null,
+            rootMargin: '-10% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    if (id) {
+                        const isRtl = document.body.getAttribute('dir') === 'rtl';
+                        const prefix = isRtl ? 'ar-' : 'en-';
+                        
+                        // Ignore sections that don't belong to the active language
+                        if (!id.startsWith(prefix)) return;
+
+                        const activeSidebar = isRtl ? 'arabicSidebar' : 'englishSidebar';
+                        document.querySelectorAll(`#${activeSidebar} .sidebar-nav a`).forEach(a => a.classList.remove('active'));
+                        
+                        const currentLink = document.querySelector(`#${activeSidebar} .sidebar-nav a[href="#${id}"]`);
+                        if (currentLink) {
+                            currentLink.classList.add('active');
+                            // Smoothly scroll the active tab to center of mobile navigation bar
+                            if (window.innerWidth <= 768) {
+                                currentLink.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                            }
+                        }
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        function updateActiveLinkOnLanguageChange() {
+            const isRtl = document.body.getAttribute('dir') === 'rtl';
+            const prefix = isRtl ? 'ar-' : 'en-';
+            const activeSidebar = isRtl ? 'arabicSidebar' : 'englishSidebar';
+            
+            // Find which section is currently closest to the top of the viewport
+            const sections = Array.from(document.querySelectorAll('.section')).filter(s => s.id.startsWith(prefix));
+            let currentSection = sections[0];
+            let minDiff = Infinity;
+            
+            sections.forEach(s => {
+                const rect = s.getBoundingClientRect();
+                const diff = Math.abs(rect.top);
+                if (diff < minDiff) {
+                    minDiff = diff;
+                    currentSection = s;
+                }
+            });
+            
+            if (currentSection) {
+                const id = currentSection.getAttribute('id');
+                document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+                const currentLink = document.querySelector(`#${activeSidebar} .sidebar-nav a[href="#${id}"]`);
+                if (currentLink) {
+                    currentLink.classList.add('active');
+                    if (window.innerWidth <= 768) {
+                        currentLink.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                    }
+                }
+            }
+        }
+
+        // Smooth scroll to anchor
+        document.querySelectorAll('.sidebar-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Manually set active class
+                    const isRtl = document.body.getAttribute('dir') === 'rtl';
+                    const activeSidebar = isRtl ? 'arabicSidebar' : 'englishSidebar';
+                    document.querySelectorAll(`#${activeSidebar} .sidebar-nav a`).forEach(a => a.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        showArabic();
+    </script>
+</body>
+</html>
