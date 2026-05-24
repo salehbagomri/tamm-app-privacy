@@ -2,7 +2,7 @@
 
 **تطبيق تمّ — خدمات التكييف والطاقة الشمسية - Tamm — HVAC & Solar Energy Services App**
 
-**آخر تحديث: أبريل 2026 - Last Updated: April 2026**
+**آخر تحديث: مايو 2026 - Last Updated: May 2026**
 
 **🔗 رابط السياسة: https://salehbagomri.github.io/tamm-app-privacy/**
 
@@ -127,7 +127,8 @@
 إذا كان لديك أي أسئلة حول سياسة الخصوصية:
 
 - **المطور**: صالح باقمري
-- **البريد الإلكتروني**: s.bagomri@gmail.com
+- **البريد الإلكتروني / الدعم الفني**: s.bagomri@gmail.com
+- **الدعم الفني عبر الواتساب**: 770727055 967+
 - **الموقع**: www.bagomri.com
 - **العنوان**: حضرموت، اليمن
 
@@ -252,7 +253,8 @@ The app requests the following permissions:
 If you have any questions about the privacy policy:
 
 - **Developer**: Saleh Bagomri
-- **Email**: s.bagomri@gmail.com
+- **Email / Technical Support**: s.bagomri@gmail.com
+- **WhatsApp Support**: +967 770727055
 - **Website**: www.bagomri.com
 - **Address**: Hadhramout, Yemen
 
@@ -307,9 +309,9 @@ You can withdraw consent at any time by deleting your account.
 
 ---
 
-**Version**: 1.0
-**Effective Date**: April 2026
-**App Version**: 1.0.0
+**Version**: 1.2
+**Effective Date**: May 2026
+**App Version**: 1.2.0
 
 ---
 

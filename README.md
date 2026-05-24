@@ -65,9 +65,9 @@ We are committed to protecting your privacy and personal data:
 
 ### 📅 آخر تحديث - Last Updated
 
-**أبريل 2026 - April 2026**
+**مايو 2026 - May 2026**
 
-**إصدار التطبيق - App Version**: 1.0.0
+**إصدار التطبيق - App Version**: 1.2.0
 
 ---
 
