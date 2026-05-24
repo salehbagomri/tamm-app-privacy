@@ -267,40 +267,51 @@
             display: none;
         }
         @media (max-width: 768px) {
-            .layout-wrapper { padding: 32px 16px; }
+            .layout-wrapper { padding: 24px 16px; }
             .header {
                 flex-direction: column;
                 align-items: stretch;
                 gap: 16px;
+                margin-bottom: 24px;
+                padding-bottom: 20px;
             }
             .main-layout {
                 flex-direction: column;
-                gap: 32px;
+                gap: 24px;
             }
             .sidebar {
                 width: 100%;
-                position: static;
+                position: sticky;
+                top: 0;
+                background-color: var(--bg-color);
+                z-index: 100;
+                padding-top: 12px;
+                padding-bottom: 12px;
+                margin-top: -12px;
+                border-bottom: 1px solid var(--border-color);
             }
             .sidebar-nav {
                 border-right: none;
                 border-left: none;
-                border-bottom: 1px solid var(--border-color);
+                border-bottom: none;
                 flex-direction: row;
                 overflow-x: auto;
-                padding-bottom: 8px;
+                padding-bottom: 0;
                 gap: 8px;
                 -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* Hide scrollbar for Firefox */
             }
-            [dir="ltr"] .sidebar-nav {
-                border-left: none;
+            .sidebar-nav::-webkit-scrollbar {
+                display: none; /* Hide scrollbar for Chrome/Safari */
             }
             .sidebar-nav a {
                 border-right: none;
                 border-bottom: 2px solid transparent;
                 margin-right: 0;
-                padding: 6px 12px;
+                padding: 6px 14px;
                 white-space: nowrap;
                 text-align: center;
+                font-size: 13px;
             }
             [dir="ltr"] .sidebar-nav a {
                 border-left: none;
@@ -310,6 +321,9 @@
             .sidebar-nav a.active {
                 border-right-color: transparent;
                 border-bottom-color: var(--accent-color);
+            }
+            .section {
+                scroll-margin-top: 72px; /* Offset to prevent sticky sidebar from overlapping headers */
             }
         }
     </style>
@@ -735,8 +749,15 @@
 
                         const activeSidebar = isRtl ? 'arabicSidebar' : 'englishSidebar';
                         document.querySelectorAll(`#${activeSidebar} .sidebar-nav a`).forEach(a => a.classList.remove('active'));
+                        
                         const currentLink = document.querySelector(`#${activeSidebar} .sidebar-nav a[href="#${id}"]`);
-                        if (currentLink) currentLink.classList.add('active');
+                        if (currentLink) {
+                            currentLink.classList.add('active');
+                            // Smoothly scroll the active tab to center of mobile navigation bar
+                            if (window.innerWidth <= 768) {
+                                currentLink.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                            }
+                        }
                     }
                 }
             });
@@ -769,7 +790,12 @@
                 const id = currentSection.getAttribute('id');
                 document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
                 const currentLink = document.querySelector(`#${activeSidebar} .sidebar-nav a[href="#${id}"]`);
-                if (currentLink) currentLink.classList.add('active');
+                if (currentLink) {
+                    currentLink.classList.add('active');
+                    if (window.innerWidth <= 768) {
+                        currentLink.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                    }
+                }
             }
         }
 
