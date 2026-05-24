@@ -4,50 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>حذف الحساب - تمّ</title>
+  <!-- Google Fonts for professional look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-color: #0f172a; /* Slate 900 */
+      --secondary-color: #475569; /* Slate 600 */
+      --accent-color: #2563eb; /* Blue 600 */
+      --border-color: #e2e8f0; /* Slate 200 */
+      --bg-color: #f8fafc; /* Slate 50 */
+      --surface-color: #ffffff;
+      --text-color: #334155; /* Slate 700 */
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
-      background: #f0f4f8;
-      color: #333;
+      font-family: 'Cairo', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       line-height: 1.8;
-      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      padding: 60px 20px;
     }
-
-    .header {
-      background: linear-gradient(135deg, #1a73e8, #0d47a1);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .header h1 { font-size: clamp(1.4rem, 4vw, 2rem); margin-bottom: 8px; }
-    .header p { opacity: 0.85; font-size: clamp(0.9rem, 2.5vw, 1rem); }
-
     .container {
-      max-width: 760px;
-      margin: 30px auto;
-      padding: 0 16px;
+      max-width: 800px;
+      margin: 0 auto;
     }
-
+    .header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 6px;
+    }
+    .header p {
+      font-size: 14px;
+      color: var(--secondary-color);
+    }
     .card {
-      background: white;
-      border-radius: 14px;
-      padding: 24px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 32px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
-
-    h2 {
-      color: #1a73e8;
-      font-size: clamp(1rem, 3vw, 1.25rem);
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .card h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 8px;
     }
-
-    /* ─── Steps Fix ─── */
+    
+    /* Steps layout */
     .steps {
       list-style: none;
       padding: 0;
@@ -56,140 +72,168 @@
     .steps li {
       display: flex;
       align-items: flex-start;
-      gap: 14px;
-      padding: 12px 0;
-      border-bottom: 1px solid #f0f0f0;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid #f1f5f9;
     }
     .steps li:last-child { border-bottom: none; }
-
+    .steps li:first-child { padding-top: 0; }
+    
     .step-num {
       flex-shrink: 0;
-      width: 30px;
-      height: 30px;
-      background: #1a73e8;
-      color: white;
+      width: 28px;
+      height: 28px;
+      background: #f1f5f9;
+      color: var(--primary-color);
+      border: 1px solid var(--border-color);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
-      font-size: 0.85rem;
+      font-weight: 600;
+      font-size: 13px;
       margin-top: 2px;
     }
+    .step-text {
+      flex: 1;
+      font-size: 15px;
+      color: var(--text-color);
+    }
+    .step-text strong {
+      color: var(--primary-color);
+    }
 
-    .step-text { flex: 1; }
+    .warning-note {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--secondary-color);
+    }
 
-    /* ─── Table ─── */
+    /* Contact box */
+    .contact-box {
+      background: #fafafa;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .contact-box p {
+      font-size: 14px;
+      color: var(--secondary-color);
+      margin-bottom: 8px;
+    }
+    .contact-box a {
+      color: var(--accent-color);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 18px;
+      word-break: break-all;
+    }
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* Data table */
     .data-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 14px;
-      font-size: clamp(0.82rem, 2.2vw, 0.95rem);
+      margin-top: 16px;
+      font-size: 14px;
     }
     .data-table th {
-      background: #1a73e8;
-      color: white;
-      padding: 10px 12px;
+      border-bottom: 2px solid var(--border-color);
+      color: var(--primary-color);
+      font-weight: 600;
+      padding: 12px 16px;
       text-align: right;
     }
     .data-table td {
-      padding: 10px 12px;
-      border-bottom: 1px solid #eee;
-      vertical-align: middle;
+      padding: 14px 16px;
+      border-bottom: 1px solid #f1f5f9;
+      color: var(--text-color);
     }
-    .data-table tr:nth-child(even) { background: #f9f9f9; }
-
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid transparent;
+    }
     .badge-deleted {
-      background: #fce8e6;
-      color: #c5221f;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      white-space: nowrap;
+      background: #fef2f2;
+      color: #b91c1c;
+      border-color: #fca5a5;
     }
     .badge-kept {
-      background: #e8f5e9;
-      color: #2e7d32;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      white-space: nowrap;
+      background: #f0fdf4;
+      color: #16a34a;
+      border-color: #86efac;
     }
 
-    /* ─── Warning ─── */
-    .warning {
-      background: #fff8e1;
-      border-right: 4px solid #f9a825;
-      padding: 14px 16px;
-      border-radius: 8px;
-      margin-top: 16px;
-      font-size: 0.92rem;
-    }
-
-    /* ─── Contact ─── */
-    .contact-box {
-      background: #e8f0fe;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      margin-top: 8px;
-    }
-    .contact-box a {
-      color: #1a73e8;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: clamp(0.95rem, 3vw, 1.1rem);
-      word-break: break-all;
-    }
-    .contact-box p { color: #555; font-size: 0.88rem; margin-top: 10px; }
-
-    /* ─── Footer ─── */
+    /* Footer */
     .footer {
       text-align: center;
-      padding: 28px 16px;
-      color: #888;
-      font-size: 0.82rem;
+      padding: 40px 0 0;
+      border-top: 1px solid var(--border-color);
+      color: var(--secondary-color);
+      font-size: 13px;
     }
-    .footer a { color: #1a73e8; text-decoration: none; }
+    .footer a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
 
-    /* ─── Responsive table ─── */
-    @media (max-width: 500px) {
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { padding: 40px 16px; }
+      .card { padding: 20px; }
       .data-table thead { display: none; }
       .data-table tr {
         display: block;
-        margin-bottom: 12px;
-        border: 1px solid #eee;
+        margin-bottom: 16px;
+        border: 1px solid var(--border-color);
         border-radius: 8px;
-        overflow: hidden;
+        padding: 12px;
       }
       .data-table td {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid #f0f0f0;
-        gap: 8px;
+        border-bottom: 1px solid #f1f5f9;
+        padding: 8px 0;
       }
+      .data-table td:last-child { border-bottom: none; }
       .data-table td::before {
         content: attr(data-label);
-        font-weight: bold;
-        color: #555;
-        white-space: nowrap;
-        flex-shrink: 0;
+        font-weight: 600;
+        color: var(--primary-color);
       }
     }
   </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>🗑️ طلب حذف الحساب والبيانات</h1>
-  <p>تطبيق تمّ — خدمات التكييف والطاقة الشمسية</p>
-</div>
-
 <div class="container">
+  <div class="header">
+    <h1>طلب حذف الحساب والبيانات</h1>
+    <p>تطبيق تمّ — خدمات التكييف والطاقة الشمسية</p>
+  </div>
 
   <div class="card">
-    <h2>📋 كيفية طلب حذف حسابك من داخل التطبيق</h2>
+    <h2>كيفية طلب حذف حسابك من داخل التطبيق</h2>
     <ul class="steps">
       <li>
         <div class="step-num">1</div>
@@ -212,25 +256,25 @@
         <div class="step-text">أكّد طلبك — سيتم حذف حسابك وجميع بياناتك فوراً</div>
       </li>
     </ul>
-    <div class="warning">
-      ⚠️ بدلاً من ذلك، يمكنك إرسال طلب حذف مباشرة عبر البريد الإلكتروني أدناه.
+    <div class="warning-note">
+      بدلاً من ذلك، يمكنك تقديم طلب حذف مباشر عبر التواصل معنا بالبريد الإلكتروني أدناه.
     </div>
   </div>
 
   <div class="card">
-    <h2>📧 طلب الحذف عبر البريد الإلكتروني</h2>
+    <h2>طلب الحذف عبر البريد الإلكتروني</h2>
     <div class="contact-box">
       <p>أرسل بريداً إلكترونياً إلى:</p>
       <a href="mailto:s.bagomri@gmail.com?subject=طلب حذف الحساب - تمّ">s.bagomri@gmail.com</a>
-      <p>اذكر في رسالتك: <strong>اسمك الكامل + البريد المسجّل + سبب الحذف (اختياري)</strong></p>
+      <p style="margin-top: 14px;">اذكر في رسالتك: <strong>اسمك الكامل + البريد المسجّل + سبب الحذف (اختياري)</strong></p>
     </div>
-    <p style="margin-top:14px; color:#666; font-size:0.9rem;">
+    <p style="margin-top:14px; color:var(--secondary-color); font-size:0.9rem; text-align: center;">
       سيتم معالجة طلبك خلال <strong>7 أيام عمل</strong> وإرسال تأكيد بالبريد الإلكتروني.
     </p>
   </div>
 
   <div class="card">
-    <h2>📊 ما الذي يتم حذفه والاحتفاظ به؟</h2>
+    <h2>ما الذي يتم حذفه والاحتفاظ به؟</h2>
     <table class="data-table">
       <thead>
         <tr>
@@ -241,39 +285,38 @@
       </thead>
       <tbody>
         <tr>
-          <td data-label="البيانات">الاسم والبريد الإلكتروني ورقم الهاتف</td>
-          <td data-label="الإجراء"><span class="badge-deleted">يُحذف فوراً</span></td>
+          <td data-label="نوع البيانات">الاسم والبريد الإلكتروني ورقم الهاتف</td>
+          <td data-label="الإجراء"><span class="badge badge-deleted">يُحذف فوراً</span></td>
           <td data-label="المدة">فور تأكيد الطلب</td>
         </tr>
         <tr>
-          <td data-label="البيانات">صورة الملف الشخصي</td>
-          <td data-label="الإجراء"><span class="badge-deleted">يُحذف فوراً</span></td>
+          <td data-label="نوع البيانات">صورة الملف الشخصي</td>
+          <td data-label="الإجراء"><span class="badge badge-deleted">يُحذف فوراً</span></td>
           <td data-label="المدة">فور تأكيد الطلب</td>
         </tr>
         <tr>
-          <td data-label="البيانات">سجل الطلبات والخدمات</td>
-          <td data-label="الإجراء"><span class="badge-deleted">يُحذف فوراً</span></td>
+          <td data-label="نوع البيانات">سجل الطلبات والخدمات</td>
+          <td data-label="الإجراء"><span class="badge badge-deleted">يُحذف فوراً</span></td>
           <td data-label="المدة">فور تأكيد الطلب</td>
         </tr>
         <tr>
-          <td data-label="البيانات">الرسائل والمحادثات</td>
-          <td data-label="الإجراء"><span class="badge-deleted">يُحذف فوراً</span></td>
+          <td data-label="نوع البيانات">الرسائل والمحادثات</td>
+          <td data-label="الإجراء"><span class="badge badge-deleted">يُحذف فوراً</span></td>
           <td data-label="المدة">فور تأكيد الطلب</td>
         </tr>
         <tr>
-          <td data-label="البيانات">سجلات الفواتير والمدفوعات</td>
-          <td data-label="الإجراء"><span class="badge-kept">يُحتفظ به</span></td>
+          <td data-label="نوع البيانات">سجلات الفواتير والمدفوعات</td>
+          <td data-label="الإجراء"><span class="badge badge-kept">يُحتفظ به</span></td>
           <td data-label="المدة">5 سنوات (التزام قانوني)</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-</div>
-
-<div class="footer">
-  © 2026 تمّ — جميع الحقوق محفوظة |
-  <a href="index.html">سياسة الخصوصية</a>
+  <div class="footer">
+    © 2026 تمّ — جميع الحقوق محفوظة |
+    <a href="index.html">سياسة الخصوصية</a>
+  </div>
 </div>
 
 </body>

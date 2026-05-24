@@ -14,10 +14,6 @@
 
 مرحباً بك في تطبيق تمّ. نحن ملتزمون بحماية خصوصيتك وبياناتك الشخصية. توضح هذه السياسة كيفية جمع واستخدام وحماية معلوماتك عند استخدام التطبيق.
 
-**المطور**: صالح باقمري (Saleh Bagomri)
-**الموقع الإلكتروني**: www.bagomri.com
-**البريد الإلكتروني**: s.bagomri@gmail.com
-
 ### 2. البيانات التي نجمعها
 
 #### 2.1 معلومات المستخدم الشخصية
@@ -126,7 +122,6 @@
 
 إذا كان لديك أي أسئلة حول سياسة الخصوصية:
 
-- **المطور**: صالح باقمري
 - **البريد الإلكتروني / الدعم الفني**: s.bagomri@gmail.com
 - **الدعم الفني عبر الواتساب**: 770727055 967+
 - **الموقع**: www.bagomri.com
@@ -139,10 +134,6 @@
 ### 1. Introduction
 
 Welcome to Tamm App. We are committed to protecting your privacy and personal data. This policy explains how we collect, use, and protect your information when using the app.
-
-**Developer**: Saleh Bagomri
-**Website**: www.bagomri.com
-**Email**: s.bagomri@gmail.com
 
 ### 2. Data We Collect
 
@@ -252,7 +243,6 @@ The app requests the following permissions:
 
 If you have any questions about the privacy policy:
 
-- **Developer**: Saleh Bagomri
 - **Email / Technical Support**: s.bagomri@gmail.com
 - **WhatsApp Support**: +967 770727055
 - **Website**: www.bagomri.com

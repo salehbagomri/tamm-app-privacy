@@ -4,371 +4,663 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="سياسة الخصوصية لتطبيق تمّ - Privacy Policy for Tamm App">
-    <meta name="keywords" content="سياسة الخصوصية, تمّ, تكييف, طاقة شمسية, Privacy Policy, Tamm, HVAC, Solar">
     <meta name="author" content="Saleh Bagomri">
     <title>سياسة الخصوصية - تمّ | Privacy Policy - Tamm</title>
+    <!-- Google Fonts for professional look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #0f172a; /* Slate 900 */
+            --secondary-color: #475569; /* Slate 600 */
+            --accent-color: #2563eb; /* Blue 600 */
+            --border-color: #e2e8f0; /* Slate 200 */
+            --bg-color: #f8fafc; /* Slate 50 */
+            --surface-color: #ffffff;
+            --text-color: #334155; /* Slate 700 */
+            --sidebar-width: 240px;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8; color: #333;
-            background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 100%);
-            padding: 20px; direction: rtl;
+            font-family: 'Cairo', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
         }
-        .container {
-            max-width: 900px; margin: 0 auto; background: white;
-            border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden;
+        .layout-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 24px;
         }
         .header {
-            background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 100%);
-            color: white; padding: 40px 30px; text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 32px;
+            margin-bottom: 48px;
+            gap: 20px;
         }
-        .header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
-        .header p { font-size: 1.2em; opacity: 0.95; }
-        .language-toggle { margin: 20px 0; text-align: center; }
+        .header-title h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 6px;
+        }
+        .header-title p {
+            font-size: 14px;
+            color: var(--secondary-color);
+        }
+        .language-toggle {
+            display: inline-flex;
+            background: #f1f5f9;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 3px;
+            flex-shrink: 0;
+        }
         .language-toggle button {
-            background: white; color: #1a3a5c; border: none; padding: 10px 30px;
-            margin: 0 10px; border-radius: 25px; cursor: pointer; font-size: 1em;
-            font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: transparent;
+            color: var(--secondary-color);
+            border: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+            font-family: inherit;
         }
-        .language-toggle button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
-        .language-toggle button.active { background: #2196F3; color: white; }
-        .content { padding: 40px 30px; }
-        .section { margin-bottom: 40px; }
-        .section h2 { color: #1a3a5c; font-size: 1.8em; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 3px solid #2196F3; }
-        .section h3 { color: #1565C0; font-size: 1.4em; margin: 20px 0 10px; }
-        .section p { margin-bottom: 15px; text-align: justify; }
-        .section ul { list-style: none; padding-right: 20px; }
-        .section ul li { margin-bottom: 10px; padding-right: 25px; position: relative; }
-        .section ul li:before { content: "✓"; position: absolute; right: 0; color: #2196F3; font-weight: bold; font-size: 1.2em; }
-        .highlight-box { background: #f0f7ff; border-left: 4px solid #2196F3; padding: 20px; margin: 20px 0; border-radius: 8px; }
-        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 8px; }
-        .success-box { background: #d4edda; border-left: 4px solid #28a745; padding: 20px; margin: 20px 0; border-radius: 8px; }
-        .footer { background: #f8f9fa; padding: 30px; text-align: center; border-top: 1px solid #dee2e6; }
-        .footer p { margin: 10px 0; color: #6c757d; }
-        .contact-info { background: #1a3a5c; color: white; padding: 20px; border-radius: 10px; margin: 20px 0; }
-        .contact-info a { color: #90CAF9; text-decoration: underline; }
-        .emoji { font-size: 1.2em; }
-        .en { direction: ltr; text-align: left; display: none; }
-        .en .section ul { padding-left: 20px; padding-right: 0; }
-        .en .section ul li { padding-left: 25px; padding-right: 0; }
-        .en .section ul li:before { left: 0; right: auto; }
-        .en .highlight-box, .en .warning-box, .en .success-box { border-left: none; border-right: 4px solid #2196F3; }
-        .en .warning-box { border-right-color: #ffc107; }
-        .en .success-box { border-right-color: #28a745; }
-        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } .content { padding: 20px 15px; } .section h2 { font-size: 1.5em; } }
+        .language-toggle button.active {
+            background: var(--surface-color);
+            color: var(--primary-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .main-layout {
+            display: flex;
+            gap: 48px;
+        }
+        .sidebar {
+            width: var(--sidebar-width);
+            position: sticky;
+            top: 40px;
+            height: fit-content;
+            flex-shrink: 0;
+        }
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            border-right: 2px solid var(--border-color);
+        }
+        [dir="ltr"] .sidebar-nav {
+            border-right: none;
+            border-left: 2px solid var(--border-color);
+        }
+        .sidebar-nav a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            transition: all 0.2s;
+            border-right: 2px solid transparent;
+            margin-right: -2px;
+            text-align: right;
+            display: block;
+        }
+        [dir="ltr"] .sidebar-nav a {
+            border-right: none;
+            border-left: 2px solid transparent;
+            margin-right: 0;
+            margin-left: -2px;
+            text-align: left;
+        }
+        .sidebar-nav a:hover {
+            color: var(--primary-color);
+        }
+        .sidebar-nav a.active {
+            color: var(--accent-color);
+            border-right-color: var(--accent-color);
+            font-weight: 600;
+        }
+        [dir="ltr"] .sidebar-nav a.active {
+            border-left-color: var(--accent-color);
+        }
+        .content-area {
+            flex-grow: 1;
+            max-width: 780px;
+        }
+        .section {
+            margin-bottom: 56px;
+            scroll-margin-top: 40px;
+        }
+        .section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        .section h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 24px 0 10px;
+        }
+        .section p {
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: var(--text-color);
+            text-align: justify;
+        }
+        .section ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        .section ul li {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            position: relative;
+            padding-right: 18px;
+        }
+        [dir="ltr"] .section ul li {
+            padding-right: 0;
+            padding-left: 18px;
+        }
+        .section ul li::before {
+            content: "•";
+            color: var(--secondary-color);
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-weight: bold;
+        }
+        [dir="ltr"] .section ul li::before {
+            right: auto;
+            left: 0;
+        }
+        .section ul li strong {
+            color: var(--primary-color);
+        }
+        .callout-box {
+            background: #fafafa;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .callout-box h3 {
+            margin-top: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+        .callout-box ul {
+            margin-bottom: 0;
+        }
+        .callout-box p {
+            font-size: 14px;
+            color: var(--text-color);
+            margin-bottom: 12px;
+        }
+        .callout-box p:last-child {
+            margin-bottom: 0;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .contact-item {
+            background: #fafafa;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .contact-item-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--secondary-color);
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+        .contact-item-value {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 500;
+            word-break: break-all;
+        }
+        .contact-item-value a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .contact-item-value a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            margin-top: 80px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--secondary-color);
+        }
+        .footer p {
+            margin-bottom: 6px;
+        }
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .en {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .layout-wrapper { padding: 32px 16px; }
+            .header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 16px;
+            }
+            .main-layout {
+                flex-direction: column;
+                gap: 32px;
+            }
+            .sidebar {
+                width: 100%;
+                position: static;
+            }
+            .sidebar-nav {
+                border-right: none;
+                border-left: none;
+                border-bottom: 1px solid var(--border-color);
+                flex-direction: row;
+                overflow-x: auto;
+                padding-bottom: 8px;
+                gap: 8px;
+                -webkit-overflow-scrolling: touch;
+            }
+            [dir="ltr"] .sidebar-nav {
+                border-left: none;
+            }
+            .sidebar-nav a {
+                border-right: none;
+                border-bottom: 2px solid transparent;
+                margin-right: 0;
+                padding: 6px 12px;
+                white-space: nowrap;
+                text-align: center;
+            }
+            [dir="ltr"] .sidebar-nav a {
+                border-left: none;
+                margin-left: 0;
+                text-align: center;
+            }
+            .sidebar-nav a.active {
+                border-right-color: transparent;
+                border-bottom-color: var(--accent-color);
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="layout-wrapper">
         <div class="header">
-            <h1>❄️ تمّ</h1>
-            <p>خدمات التكييف والطاقة الشمسية</p>
-            <p style="font-size: 0.9em; margin-top: 5px;">سياسة الخصوصية - Privacy Policy</p>
-            <p style="font-size: 0.85em; margin-top: 10px;">آخر تحديث: مايو 2026</p>
+            <div class="header-title">
+                <h1>تمّ</h1>
+                <p>خدمات التكييف والطاقة الشمسية — سياسة الخصوصية</p>
+                <p style="font-size: 12px; margin-top: 6px; color: var(--secondary-color);">آخر تحديث: مايو 2026</p>
+            </div>
             <div class="language-toggle">
-                <button id="btnArabic" class="active" onclick="showArabic()">🇾🇪 العربية</button>
-                <button id="btnEnglish" onclick="showEnglish()">🇬🇧 English</button>
+                <button id="btnArabic" class="active" onclick="showArabic()">العربية</button>
+                <button id="btnEnglish" onclick="showEnglish()">English</button>
             </div>
         </div>
 
-        <!-- Arabic Version -->
-        <div class="content ar" id="arabicContent">
-            <div class="section">
-                <h2>📋 المقدمة</h2>
-                <p>مرحباً بك في تطبيق تمّ. نحن ملتزمون بحماية خصوصيتك وبياناتك الشخصية. توضح هذه السياسة كيفية جمع واستخدام وحماية معلوماتك عند استخدام التطبيق.</p>
-                <div class="contact-info">
-                    <p><strong>المطور:</strong> صالح باقمري (Saleh Bagomri)</p>
-                    <p><strong>الموقع:</strong> <a href="https://www.bagomri.com">www.bagomri.com</a></p>
-                    <p><strong>البريد الإلكتروني:</strong> <a href="mailto:s.bagomri@gmail.com">s.bagomri@gmail.com</a></p>
-                </div>
-            </div>
-            <div class="section">
-                <h2>📊 البيانات التي نجمعها</h2>
-                <h3>معلومات المستخدم الشخصية</h3>
-                <p>عند التسجيل كعميل، نقوم بجمع:</p>
-                <ul>
-                    <li><strong>الاسم الكامل:</strong> لتحديد هوية العميل وتخصيص التجربة</li>
-                    <li><strong>رقم الهاتف:</strong> للتواصل معك بخصوص الطلبات والخدمات</li>
-                    <li><strong>البريد الإلكتروني:</strong> لتسجيل الدخول وإدارة الحساب</li>
-                    <li><strong>صورة شخصية (اختيارية):</strong> لإضافتها في ملفك الشخصي</li>
-                </ul>
-                <h3>معلومات الحساب</h3>
-                <ul>
-                    <li><strong>كلمة المرور:</strong> مشفرة بالكامل ولا يمكن لأحد الاطلاع عليها</li>
-                    <li><strong>حساب Google:</strong> عند تسجيل الدخول عبر Google Sign-In</li>
-                </ul>
-                <h3>بيانات الاستخدام</h3>
-                <ul>
-                    <li><strong>سجل الطلبات:</strong> لتتبع مشترياتك وطلبات الخدمة</li>
-                    <li><strong>محتويات السلة:</strong> لحفظ المنتجات المختارة</li>
-                    <li><strong>الإشعارات:</strong> تفضيلات استقبال الإشعارات</li>
-                </ul>
-            </div>
-            <div class="section">
-                <h2>🎯 كيف نستخدم بياناتك</h2>
-                <div class="highlight-box">
-                    <h3>الغرض الأساسي</h3>
-                    <ul>
-                        <li><strong>إدارة الطلبات:</strong> معالجة طلبات المنتجات وخدمات التكييف والطاقة الشمسية</li>
-                        <li><strong>إرسال إشعارات حالة الطلب:</strong> إعلامك بتحديثات طلباتك</li>
-                        <li><strong>تقديم عروض الأسعار:</strong> الرد على طلبات عروض الأسعار</li>
-                        <li><strong>إدارة الأجهزة:</strong> تسجيل ومتابعة أجهزة التكييف</li>
-                    </ul>
-                </div>
-                <h3>أغراض ثانوية</h3>
-                <ul>
-                    <li>تحسين الخدمة وتطوير التطبيق</li>
-                    <li>تقديم الدعم الفني</li>
-                    <li>إنشاء تقارير إحصائية (بدون معلومات شخصية)</li>
-                </ul>
-            </div>
-            <div class="section">
-                <h2>💾 تخزين البيانات</h2>
-                <div class="highlight-box">
-                    <h3>قاعدة البيانات - Supabase</h3>
-                    <ul>
-                        <li>خدمة قاعدة بيانات سحابية آمنة</li>
-                        <li>جميع البيانات مشفرة أثناء النقل (SSL/TLS)</li>
-                        <li>الخوادم في مراكز بيانات آمنة ومعتمدة</li>
-                    </ul>
-                    <h3>الإشعارات - Firebase Cloud Messaging</h3>
-                    <ul>
-                        <li>لإرسال إشعارات حالة الطلبات</li>
-                        <li>لا يتم جمع معلومات شخصية</li>
-                        <li>يتم تخزين رمز الجهاز فقط</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="section">
-                <h2>🔒 مشاركة البيانات</h2>
-                <div class="warning-box">
-                    <h3>❌ ما لا نفعله</h3>
-                    <ul>
-                        <li>لا نبيع بياناتك لأي طرف ثالث</li>
-                        <li>لا نشارك معلوماتك مع شركات إعلانات</li>
-                        <li>لا نستخدم بياناتك لأغراض تجارية خارجية</li>
-                        <li>لا توجد إعلانات في التطبيق</li>
-                    </ul>
-                </div>
-                <div class="success-box">
-                    <h3>✅ المشاركة المحدودة</h3>
-                    <p><strong>مع فريق الإدارة:</strong> لمعالجة طلباتك وتقديم الخدمات</p>
-                    <p><strong>مع الفنيين المعتمدين:</strong> لتنفيذ خدمات التركيب والصيانة المطلوبة</p>
-                </div>
-            </div>
-            <div class="section">
-                <h2>🛡️ أمان البيانات</h2>
-                <ul>
-                    <li><span class="emoji">🔐</span> <strong>التشفير:</strong> جميع البيانات مشفرة أثناء النقل والتخزين</li>
-                    <li><span class="emoji">🔑</span> <strong>كلمات المرور:</strong> مشفرة باستخدام خوارزميات قوية</li>
-                    <li><span class="emoji">🛡️</span> <strong>المصادقة:</strong> نظام تسجيل دخول آمن من Supabase</li>
-                    <li><span class="emoji">📱</span> <strong>الأذونات:</strong> نطلب فقط الأذونات الضرورية</li>
-                </ul>
-            </div>
-            <div class="section">
-                <h2>⚖️ حقوقك</h2>
-                <ul>
-                    <li><strong>الوصول:</strong> عرض جميع بياناتك المخزنة</li>
-                    <li><strong>التعديل:</strong> تحديث معلوماتك الشخصية في أي وقت</li>
-                    <li><strong>الحذف:</strong> حذف حسابك وجميع بياناتك نهائياً</li>
-                    <li><strong>الانسحاب:</strong> إيقاف تلقي الإشعارات</li>
-                </ul>
-                <div class="contact-info">
-                    <p><strong>لممارسة هذه الحقوق:</strong> اتصل بنا عبر <a href="mailto:s.bagomri@gmail.com">s.bagomri@gmail.com</a></p>
-                </div>
-            </div>
-            <div class="section">
-                <h2>📱 الأذونات المطلوبة</h2>
-                <ul>
-                    <li><span class="emoji">🔔</span> <strong>الإشعارات:</strong> لإرسال تنبيهات حالة الطلبات والعروض</li>
-                    <li><span class="emoji">🌐</span> <strong>الإنترنت:</strong> للاتصال بقاعدة البيانات</li>
-                    <li><span class="emoji">📍</span> <strong>الموقع (اختياري):</strong> لتحديد منطقة التوصيل</li>
-                </ul>
-            </div>
-            <div class="section">
-                <h2>👶 حماية الأطفال</h2>
-                <div class="warning-box">
-                    <ul>
-                        <li>التطبيق مخصص للبالغين (18 سنة فأكثر)</li>
-                        <li>لا نجمع عمداً معلومات من الأطفال دون 18 سنة</li>
-                        <li>إذا اكتشفنا تسجيل قاصر، سنحذف الحساب فوراً</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="section">
-                <h2>✅ موافقتك</h2>
-                <div class="highlight-box">
-                    <p>باستخدام تطبيق تمّ، أنت توافق على:</p>
-                    <ul>
-                        <li>جمع البيانات كما هو موضح في هذه السياسة</li>
-                        <li>استخدام بياناتك للأغراض المذكورة</li>
-                        <li>تخزين بياناتك على خوادم Supabase</li>
-                        <li>مشاركة معلومات الطلب مع فريق الخدمة</li>
-                    </ul>
-                    <p><strong>يمكنك سحب موافقتك في أي وقت عن طريق حذف حسابك.</strong></p>
-                </div>
-            </div>
-            <div class="section">
-                <h2>📞 الاتصال بنا</h2>
-                <div class="contact-info">
-                    <p><strong>المطور:</strong> صالح باقمري</p>
-                    <p><strong>البريد الإلكتروني / الدعم الفني:</strong> <a href="mailto:s.bagomri@gmail.com">s.bagomri@gmail.com</a></p>
-                    <p><strong>الدعم الفني عبر الواتساب:</strong> <a href="https://wa.me/967770727055">+967 770727055</a></p>
-                    <p><strong>الموقع:</strong> <a href="https://www.bagomri.com">www.bagomri.com</a></p>
-                    <p><strong>العنوان:</strong> حضرموت، اليمن</p>
-                </div>
-            </div>
-        </div>
+        <div class="main-layout">
+            <!-- Sidebar Table of Contents (Arabic) -->
+            <aside class="sidebar" id="arabicSidebar">
+                <nav class="sidebar-nav">
+                    <a href="#ar-intro" class="active">المقدمة</a>
+                    <a href="#ar-data">البيانات التي نجمعها</a>
+                    <a href="#ar-usage">كيفية استخدام البيانات</a>
+                    <a href="#ar-storage">تخزين وأمان البيانات</a>
+                    <a href="#ar-sharing">مشاركة البيانات</a>
+                    <a href="#ar-rights">حقوق المستخدمين</a>
+                    <a href="#ar-permissions">الأذونات المطلوبة</a>
+                    <a href="#ar-consent">الموافقة والإقرار</a>
+                    <a href="#ar-contact">الاتصال بنا</a>
+                </nav>
+            </aside>
 
-        <!-- English Version -->
-        <div class="content en" id="englishContent">
-            <div class="section">
-                <h2>📋 Introduction</h2>
-                <p>Welcome to Tamm App. We are committed to protecting your privacy and personal data. This policy explains how we collect, use, and protect your information when using the app.</p>
-                <div class="contact-info">
-                    <p><strong>Developer:</strong> Saleh Bagomri</p>
-                    <p><strong>Website:</strong> <a href="https://www.bagomri.com">www.bagomri.com</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:s.bagomri@gmail.com">s.bagomri@gmail.com</a></p>
+            <!-- Sidebar Table of Contents (English) -->
+            <aside class="sidebar en" id="englishSidebar">
+                <nav class="sidebar-nav">
+                    <a href="#en-intro">Introduction</a>
+                    <a href="#en-data">Data We Collect</a>
+                    <a href="#en-usage">Data Usage</a>
+                    <a href="#en-storage">Storage and Security</a>
+                    <a href="#en-sharing">Data Sharing</a>
+                    <a href="#en-rights">User Rights</a>
+                    <a href="#en-permissions">Required Permissions</a>
+                    <a href="#en-consent">Consent & Acknowledgment</a>
+                    <a href="#en-contact">Contact Us</a>
+                </nav>
+            </aside>
+
+            <div class="content-area">
+                <!-- Arabic Version -->
+                <div class="content ar" id="arabicContent">
+                    <div class="section" id="ar-intro">
+                        <h2>المقدمة</h2>
+                        <p>مرحباً بك في تطبيق تمّ. نحن ملتزمون بحماية خصوصيتك وبياناتك الشخصية. توضح هذه السياسة كيفية جمع واستخدام وحماية معلوماتك عند استخدام التطبيق.</p>
+                    </div>
+                    
+                    <div class="section" id="ar-data">
+                        <h2>البيانات التي نجمعها</h2>
+                        <h3>معلومات المستخدم الشخصية</h3>
+                        <p>عند التسجيل كعميل، نقوم بجمع المعطيات التالية:</p>
+                        <ul>
+                            <li><strong>الاسم الكامل:</strong> لتحديد هوية العميل وتخصيص تجربة الاستخدام.</li>
+                            <li><strong>رقم الهاتف:</strong> للتواصل معكم بخصوص الطلبات والخدمات المقدمة.</li>
+                            <li><strong>البريد الإلكتروني:</strong> لتوثيق عمليات تسجيل الدخول وإدارة الحساب.</li>
+                            <li><strong>صورة شخصية (اختيارية):</strong> لإضافتها في ملفكم الشخصي بناء على رغبتكم.</li>
+                        </ul>
+                        
+                        <h3>معلومات الحساب</h3>
+                        <ul>
+                            <li><strong>كلمة المرور:</strong> مشفرة بالكامل ولا يمكن لأي طرف الاطلاع عليها.</li>
+                            <li><strong>حساب Google:</strong> عند اختياركم تسجيل الدخول عبر Google Sign-In المعتمد.</li>
+                        </ul>
+                        
+                        <h3>بيانات الاستخدام</h3>
+                        <ul>
+                            <li><strong>سجل الطلبات والخدمات:</strong> لتتبع وإدارة مشترياتكم وطلبات الصيانة والتركيب.</li>
+                            <li><strong>محتويات السلة:</strong> لحفظ وتثبيت المنتجات المختارة للشراء لاحقاً.</li>
+                            <li><strong>الإشعارات:</strong> لحفظ وتخصيص تفضيلات استقبال إشعارات التطبيق.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section" id="ar-usage">
+                        <h2>كيفية استخدام البيانات</h2>
+                        <div class="callout-box">
+                            <h3>الأغراض الأساسية لمعالجة البيانات</h3>
+                            <ul>
+                                <li><strong>إدارة الطلبات:</strong> معالجة طلبات المنتجات وخدمات التكييف والطاقة الشمسية.</li>
+                                <li><strong>تحديثات حالة الطلب:</strong> إعلامكم بتحديثات ومراحل تنفيذ طلباتكم.</li>
+                                <li><strong>تقديم عروض الأسعار:</strong> معالجة وتقديم عروض الأسعار المطلوبة منكم.</li>
+                                <li><strong>إدارة الأجهزة:</strong> تسجيل ومتابعة أجهزة التكييف المضافة في حسابكم.</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>الأغراض الفنية والتطويرية</h3>
+                        <ul>
+                            <li>تحسين الأداء وتطوير الخدمات التقنية للتطبيق.</li>
+                            <li>تقديم الدعم الفني وحل المشاكل التقنية التي قد تواجهكم.</li>
+                            <li>إعداد الإحصائيات العامة غير المعرفة بالهوية لتحسين جودة التشغيل.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section" id="ar-storage">
+                        <h2>تخزين وأمان البيانات</h2>
+                        <div class="callout-box">
+                            <h3>قاعدة البيانات السحابية - Supabase</h3>
+                            <ul>
+                                <li>يتم استخدام خوادم Supabase كمنصة تخزين سحابية آمنة ومحمية بالكامل.</li>
+                                <li>يتم تشفير جميع البيانات بشكل آمن أثناء النقل باستخدام بروتوكولات (SSL/TLS).</li>
+                                <li>تخضع قواعد البيانات لسياسات أمان صارمة ومستضافة في مراكز بيانات معتمدة عالمياً.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="callout-box">
+                            <h3>خدمة الإشعارات - Firebase Cloud Messaging</h3>
+                            <ul>
+                                <li>نستخدم Firebase لإرسال إشعارات حالة الطلبات بصورة حية.</li>
+                                <li>الخدمة لا تقوم بجمع أي معلومات شخصية، ويقتصر التخزين على رمز التعارف الفني للجهاز.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="section" id="ar-sharing">
+                        <h2>مشاركة البيانات</h2>
+                        <div class="callout-box">
+                            <h3>الممارسات المحظورة</h3>
+                            <ul>
+                                <li>لا نقوم مطلقاً ببيع أو تأجير بياناتكم الشخصية لأي طرف ثالث.</li>
+                                <li>لا نشارك معلوماتكم مع أي شبكات أو شركات إعلانية.</li>
+                                <li>لا نستخدم بياناتكم لأي أغراض تجارية أو تسويقية خارج نطاق خدمات تمّ.</li>
+                                <li>التطبيق خالي تماماً من الإعلانات التجارية.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="callout-box">
+                            <h3>المشاركات المصرح بها قانونياً وتشغيلياً</h3>
+                            <p><strong>مع فريق إدارة المنصة:</strong> لضمان معالجة وتدقيق طلباتكم وتقديم الدعم.</p>
+                            <p style="margin-top: 8px;"><strong>مع الفنيين المعتمدين:</strong> لمشاركتهم تفاصيل العنوان ورقم الهاتف لتنفيذ خدمات التركيب والصيانة الميدانية المطلوبة.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="section" id="ar-rights">
+                        <h2>حقوق المستخدمين</h2>
+                        <ul>
+                            <li><strong>الوصول والمعاينة:</strong> حق الاطلاع الكامل على كافة بياناتكم المسجلة لدينا.</li>
+                            <li><strong>التصحيح والتعديل:</strong> حق تحديث بياناتكم الشخصية في أي وقت من خلال ملفكم الشخصي.</li>
+                            <li><strong>حذف البيانات نهائياً:</strong> حق حذف حسابكم وكافة البيانات المرتبطة به بشكل دائم وغير قابل للاسترجاع.</li>
+                            <li><strong>التحكم في التنبيهات:</strong> إمكانية إيقاف أو تعديل تفضيلات تلقي الإشعارات الفورية.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section" id="ar-permissions">
+                        <h2>الأذونات المطلوبة في نظام التشغيل</h2>
+                        <ul>
+                            <li><strong>الإشعارات الفورية:</strong> لإرسال تحديثات حالة الطلبات وتنبيهات العروض الفنية.</li>
+                            <li><strong>الاتصال بالإنترنت:</strong> للاتصال بقواعد البيانات السحابية وضمان عمل التطبيق.</li>
+                            <li><strong>الموقع الجغرافي (اختياري):</strong> لتحديد موقع التوصيل أو التركيب لضمان دقة الخدمة الميدانية.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section" id="ar-consent">
+                        <h2>الموافقة والإقرار</h2>
+                        <div class="callout-box">
+                            <p>باستخدامكم لتطبيق تمّ، فإنكم تقرون وتوافقون على:</p>
+                            <ul style="margin-top: 12px;">
+                                <li>جمع البيانات الشخصية وتخزينها بالشكل الموضح في هذه السياسة.</li>
+                                <li>استخدام البيانات في الأغراض التشغيلية المحددة للخدمة.</li>
+                                <li>تخزين البيانات ومعالجتها بأمان عبر خوادم Supabase السحابية.</li>
+                                <li>مشاركة معلومات الموقع والتواصل مع الفنيين المكلفين بتنفيذ طلبكم.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="section" id="ar-contact">
+                        <h2>الاتصال بنا</h2>
+                        <p>إذا كان لديكم أي استفسار أو شكوى بخصوص سياسة الخصوصية، يرجى التواصل معنا عبر القنوات التالية:</p>
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <div class="contact-item-label">البريد الإلكتروني / الدعم الفني</div>
+                                <div class="contact-item-value"><a href="mailto:s.bagomri@gmail.com">s.bagomri@gmail.com</a></div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-label">الدعم عبر الواتساب</div>
+                                <div class="contact-item-value"><a href="https://wa.me/967770727055" dir="ltr">+967 770727055</a></div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-label">الموقع الإلكتروني</div>
+                                <div class="contact-item-value"><a href="https://www.bagomri.com" target="_blank">www.bagomri.com</a></div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-label">العنوان</div>
+                                <div class="contact-item-value">حضرموت، الجمهورية اليمنية</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="section">
-                <h2>📊 Data We Collect</h2>
-                <h3>Personal User Information</h3>
-                <p>When registering as a customer, we collect:</p>
-                <ul>
-                    <li><strong>Full Name:</strong> To identify the customer and personalize the experience</li>
-                    <li><strong>Phone Number:</strong> To contact you regarding orders and services</li>
-                    <li><strong>Email Address:</strong> For login and account management</li>
-                    <li><strong>Profile Picture (Optional):</strong> To add to your profile</li>
-                </ul>
-                <h3>Account Information</h3>
-                <ul>
-                    <li><strong>Password:</strong> Fully encrypted and cannot be viewed by anyone</li>
-                    <li><strong>Google Account:</strong> When signing in via Google Sign-In</li>
-                </ul>
-            </div>
-            <div class="section">
-                <h2>🎯 How We Use Your Data</h2>
-                <div class="highlight-box">
-                    <h3>Primary Purpose</h3>
-                    <ul>
-                        <li><strong>Order Management:</strong> Process product orders and HVAC & solar energy services</li>
-                        <li><strong>Send Order Notifications:</strong> Notify you about order updates</li>
-                        <li><strong>Provide Quotations:</strong> Respond to your price quote requests</li>
-                        <li><strong>Device Management:</strong> Register and track HVAC devices</li>
-                    </ul>
-                </div>
-                <h3>Secondary Purposes</h3>
-                <ul>
-                    <li>Service improvement and app development</li>
-                    <li>Technical support</li>
-                    <li>Create statistical reports (without personal information)</li>
-                </ul>
-            </div>
-            <div class="section">
-                <h2>💾 Data Storage</h2>
-                <div class="highlight-box">
-                    <h3>Database - Supabase</h3>
-                    <ul>
-                        <li>Secure cloud database service</li>
-                        <li>All data encrypted during transmission (SSL/TLS)</li>
-                        <li>Servers in secure, certified data centers</li>
-                    </ul>
-                    <h3>Notifications - Firebase Cloud Messaging</h3>
-                    <ul>
-                        <li>For sending order status notifications</li>
-                        <li>No personal information collected</li>
-                        <li>Only device token is stored</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="section">
-                <h2>🔒 Data Sharing</h2>
-                <div class="warning-box">
-                    <h3>❌ What We Don't Do</h3>
-                    <ul>
-                        <li>We don't sell your data to any third party</li>
-                        <li>We don't share your information with advertising companies</li>
-                        <li>We don't use your data for external commercial purposes</li>
-                        <li>No advertisements in the app</li>
-                    </ul>
-                </div>
-                <div class="success-box">
-                    <h3>✅ Limited Sharing</h3>
-                    <p><strong>With management team:</strong> To process your orders and provide services</p>
-                    <p><strong>With certified technicians:</strong> To perform requested installation and maintenance</p>
-                </div>
-            </div>
-            <div class="section">
-                <h2>🛡️ Data Security</h2>
-                <ul>
-                    <li><span class="emoji">🔐</span> <strong>Encryption:</strong> All data encrypted during transmission and storage</li>
-                    <li><span class="emoji">🔑</span> <strong>Passwords:</strong> Encrypted using strong algorithms</li>
-                    <li><span class="emoji">🛡️</span> <strong>Authentication:</strong> Secure login system from Supabase</li>
-                    <li><span class="emoji">📱</span> <strong>Permissions:</strong> We only request necessary permissions</li>
-                </ul>
-            </div>
-            <div class="section">
-                <h2>⚖️ Your Rights</h2>
-                <ul>
-                    <li><strong>Access:</strong> View all your stored data</li>
-                    <li><strong>Modify:</strong> Update your personal information at any time</li>
-                    <li><strong>Delete:</strong> Permanently delete your account and all data</li>
-                    <li><strong>Opt-out:</strong> Stop receiving notifications</li>
-                </ul>
-                <div class="contact-info">
-                    <p><strong>To exercise these rights:</strong> Contact us at <a href="mailto:s.bagomri@gmail.com">s.bagomri@gmail.com</a></p>
-                </div>
-            </div>
-            <div class="section">
-                <h2>📱 Required Permissions</h2>
-                <ul>
-                    <li><span class="emoji">🔔</span> <strong>Notifications:</strong> To send order status and offer alerts</li>
-                    <li><span class="emoji">🌐</span> <strong>Internet:</strong> To connect to the database</li>
-                    <li><span class="emoji">📍</span> <strong>Location (Optional):</strong> To determine delivery area</li>
-                </ul>
-            </div>
-            <div class="section">
-                <h2>👶 Children's Protection</h2>
-                <div class="warning-box">
-                    <ul>
-                        <li>The app is designed for adults (18 years and older)</li>
-                        <li>We do not knowingly collect information from children under 18</li>
-                        <li>If we discover a minor's registration, we will delete the account immediately</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="section">
-                <h2>✅ Your Consent</h2>
-                <div class="highlight-box">
-                    <p>By using Tamm App, you consent to:</p>
-                    <ul>
-                        <li>Collection of data as described in this policy</li>
-                        <li>Use of your data for the purposes mentioned</li>
-                        <li>Storage of your data on Supabase servers</li>
-                        <li>Sharing your order info with service team</li>
-                    </ul>
-                    <p><strong>You can withdraw consent at any time by deleting your account.</strong></p>
-                </div>
-            </div>
-            <div class="section">
-                <h2>📞 Contact Us</h2>
-                <div class="contact-info">
-                    <p><strong>Developer:</strong> Saleh Bagomri</p>
-                    <p><strong>Email / Technical Support:</strong> <a href="mailto:s.bagomri@gmail.com">s.bagomri@gmail.com</a></p>
-                    <p><strong>WhatsApp Support:</strong> <a href="https://wa.me/967770727055">+967 770727055</a></p>
-                    <p><strong>Website:</strong> <a href="https://www.bagomri.com">www.bagomri.com</a></p>
-                    <p><strong>Address:</strong> Hadhramout, Yemen</p>
+
+                <!-- English Version -->
+                <div class="content en" id="englishContent">
+                    <div class="section" id="en-intro">
+                        <h2>Introduction</h2>
+                        <p>Welcome to Tamm App. We are committed to protecting your privacy and personal data. This policy explains how we collect, use, and protect your information when using the app.</p>
+                    </div>
+                    
+                    <div class="section" id="en-data">
+                        <h2>Data We Collect</h2>
+                        <h3>Personal User Information</h3>
+                        <p>When registering as a customer, we collect the following data:</p>
+                        <ul>
+                            <li><strong>Full Name:</strong> To identify the user and personalize the application experience.</li>
+                            <li><strong>Phone Number:</strong> To contact you regarding service requests and orders.</li>
+                            <li><strong>Email Address:</strong> To authenticate logins and manage your account.</li>
+                            <li><strong>Profile Picture (Optional):</strong> Added voluntarily to personalize your user profile.</li>
+                        </ul>
+                        
+                        <h3>Account Credentials</h3>
+                        <ul>
+                            <li><strong>Password:</strong> Fully encrypted and inaccessible to anyone.</li>
+                            <li><strong>Google Account:</strong> Collected only when choosing authentication via Google Sign-In.</li>
+                        </ul>
+                        
+                        <h3>Usage Analytics</h3>
+                        <ul>
+                            <li><strong>Order History:</strong> To track and manage your purchase invoices and service requests.</li>
+                            <li><strong>Cart Contents:</strong> To retain selected items for future checkout.</li>
+                            <li><strong>Notifications:</strong> To save preferences for receiving push alerts.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section" id="en-usage">
+                        <h2>Data Usage</h2>
+                        <div class="callout-box">
+                            <h3>Primary Processing Purposes</h3>
+                            <ul>
+                                <li><strong>Order Management:</strong> Processing orders for products, HVAC, and solar energy services.</li>
+                                <li><strong>Order Status Updates:</strong> Notifying you of implementation phases and progress.</li>
+                                <li><strong>Quotations:</strong> Reviewing and responding to custom pricing inquiries.</li>
+                                <li><strong>Device Tracking:</strong> Managing and monitoring HVAC units saved on your account.</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Technical Operations</h3>
+                        <ul>
+                            <li>Enhancing app performance and developing technical services.</li>
+                            <li>Providing technical support and troubleshooting operational issues.</li>
+                            <li>Generating anonymized statistics to optimize overall service quality.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section" id="en-storage">
+                        <h2>Storage and Security</h2>
+                        <div class="callout-box">
+                            <h3>Cloud Database - Supabase</h3>
+                            <ul>
+                                <li>We utilize secure, fully protected Supabase cloud instances.</li>
+                                <li>All data is securely encrypted in transit using industry-standard SSL/TLS protocols.</li>
+                                <li>Data storage is subject to strict access control policies and hosted in world-class secure data centers.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="callout-box">
+                            <h3>Push Notifications - Firebase Cloud Messaging</h3>
+                            <ul>
+                                <li>Firebase is utilized to send real-time order and service notifications.</li>
+                                <li>No personal data is collected by this service; only the unique device identifier is stored.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="section" id="en-sharing">
+                        <h2>Data Sharing</h2>
+                        <div class="callout-box">
+                            <h3>Prohibited Practices</h3>
+                            <ul>
+                                <li>We do not sell, rent, or lease your personal data to third parties.</li>
+                                <li>We do not share your information with advertising agencies.</li>
+                                <li>Your data is never utilized for commercial marketing outside the scope of Tamm services.</li>
+                                <li>The application remains entirely ad-free.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="callout-box">
+                            <h3>Authorized Disclosures</h3>
+                            <p><strong>With Platform Administrators:</strong> To process your orders and handle support inquiries.</p>
+                            <p style="margin-top: 8px;"><strong>With Certified Technicians:</strong> Sharing location coordinates and contact numbers strictly to execute field installation and maintenance services.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="section" id="en-rights">
+                        <h2>User Rights</h2>
+                        <ul>
+                            <li><strong>Right to Access:</strong> Inspect all personal data stored in our systems.</li>
+                            <li><strong>Right to Modify:</strong> Instantly update your personal information through your profile.</li>
+                            <li><strong>Right to Erasure:</strong> Permanently delete your account and all associated data.</li>
+                            <li><strong>Notification Settings:</strong> Opt-out or customize push notification preferences at any time.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section" id="en-permissions">
+                        <h2>Required Permissions</h2>
+                        <ul>
+                            <li><strong>Push Notifications:</strong> To deliver order updates and service alerts.</li>
+                            <li><strong>Internet Access:</strong> To establish secure communication with our cloud database.</li>
+                            <li><strong>Location Services (Optional):</strong> To verify precise delivery or installation coordinates.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section" id="en-consent">
+                        <h2>Consent and Acknowledgment</h2>
+                        <div class="callout-box">
+                            <p>By using Tamm App, you acknowledge and agree to:</p>
+                            <ul style="margin-top: 12px;">
+                                <li>The collection and storage of your personal data as outlined in this policy.</li>
+                                <li>The utilization of data for operational and functional service requirements.</li>
+                                <li>Secure processing and database management via Supabase cloud infrastructure.</li>
+                                <li>Sharing necessary contact and location info with assigned service technicians.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="section" id="en-contact">
+                        <h2>Contact Us</h2>
+                        <p>If you have any questions or concerns regarding this privacy policy, please contact us using the channels below:</p>
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <div class="contact-item-label">Email / Technical Support</div>
+                                <div class="contact-item-value"><a href="mailto:s.bagomri@gmail.com">s.bagomri@gmail.com</a></div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-label">WhatsApp Support</div>
+                                <div class="contact-item-value"><a href="https://wa.me/967770727055" dir="ltr">+967 770727055</a></div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-label">Website</div>
+                                <div class="contact-item-value"><a href="https://www.bagomri.com" target="_blank">www.bagomri.com</a></div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-label">Address</div>
+                                <div class="contact-item-value">Hadhramout, Yemen</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="footer">
-            <p><strong>📱 إصدار التطبيق - App Version: 1.2.0</strong></p>
+            <p>إصدار التطبيق - App Version: 1.2.0</p>
             <p>آخر تحديث - Last Updated: مايو 2026 - May 2026</p>
-            <p>❄️ تمّ — خدمات التكييف والطاقة الشمسية</p>
-            <p style="margin-top: 20px;">© 2026 Saleh Bagomri - جميع الحقوق محفوظة - All Rights Reserved</p>
+            <p>تمّ — خدمات التكييف والطاقة الشمسية</p>
+            <p style="margin-top: 20px;">&copy; 2026 Saleh Bagomri - جميع الحقوق محفوظة - All Rights Reserved</p>
         </div>
     </div>
 
@@ -376,17 +668,98 @@
         function showArabic() {
             document.getElementById('arabicContent').style.display = 'block';
             document.getElementById('englishContent').style.display = 'none';
+            document.getElementById('arabicSidebar').style.display = 'block';
+            document.getElementById('englishSidebar').style.display = 'none';
             document.getElementById('btnArabic').classList.add('active');
             document.getElementById('btnEnglish').classList.remove('active');
             document.body.setAttribute('dir', 'rtl');
+            document.documentElement.setAttribute('lang', 'ar');
+            updateActiveLink();
         }
         function showEnglish() {
             document.getElementById('arabicContent').style.display = 'none';
             document.getElementById('englishContent').style.display = 'block';
+            document.getElementById('arabicSidebar').style.display = 'none';
+            document.getElementById('englishSidebar').style.display = 'block';
             document.getElementById('btnArabic').classList.remove('active');
             document.getElementById('btnEnglish').classList.add('active');
             document.body.setAttribute('dir', 'ltr');
+            document.documentElement.setAttribute('lang', 'en');
+            updateActiveLink();
         }
+
+        // Highlight active sidebar links on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    if (id) {
+                        const isRtl = document.body.getAttribute('dir') === 'rtl';
+                        const activeSidebar = isRtl ? 'arabicSidebar' : 'englishSidebar';
+                        document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+                        const currentLink = document.querySelector(`#${activeSidebar} .sidebar-nav a[href="#${id}"]`);
+                        if (currentLink) currentLink.classList.add('active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        function updateActiveLink() {
+            const sections = Array.from(document.querySelectorAll('.section'));
+            const isRtl = document.body.getAttribute('dir') === 'rtl';
+            
+            // Filter sections based on current language
+            const activeSections = sections.filter(s => {
+                return isRtl ? s.id.startsWith('ar-') : s.id.startsWith('en-');
+            });
+
+            const visibleSection = activeSections.find(s => {
+                const rect = s.getBoundingClientRect();
+                return rect.top >= -100 && rect.top <= window.innerHeight * 0.4;
+            }) || activeSections[0];
+            
+            if (visibleSection) {
+                const id = visibleSection.getAttribute('id');
+                const activeSidebar = isRtl ? 'arabicSidebar' : 'englishSidebar';
+                document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+                const currentLink = document.querySelector(`#${activeSidebar} .sidebar-nav a[href="#${id}"]`);
+                if (currentLink) currentLink.classList.add('active');
+            }
+        }
+
+        // Smooth scroll to anchor
+        document.querySelectorAll('.sidebar-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Manually set active class
+                    document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Listen for scroll to update sidebar dynamically
+        window.addEventListener('scroll', () => {
+            updateActiveLink();
+        });
+
         showArabic();
     </script>
 </body>
