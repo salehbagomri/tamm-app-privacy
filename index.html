@@ -6,10 +6,10 @@
     <meta name="description" content="سياسة الخصوصية لتطبيق تمّ - Privacy Policy for Tamm App">
     <meta name="author" content="Saleh Bagomri">
     <title>سياسة الخصوصية - تمّ | Privacy Policy - Tamm</title>
-    <!-- Google Fonts for professional look -->
+    <!-- Google Fonts for professional look - Alexandria and Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #0f172a; /* Slate 900 */
@@ -23,7 +23,7 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Cairo', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Alexandria', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.8;
@@ -317,10 +317,17 @@
 <body>
     <div class="layout-wrapper">
         <div class="header">
-            <div class="header-title">
+            <!-- Header Arabic -->
+            <div class="header-title" id="arabicHeaderTitle">
                 <h1>تمّ</h1>
                 <p>خدمات التكييف والطاقة الشمسية — سياسة الخصوصية</p>
                 <p style="font-size: 12px; margin-top: 6px; color: var(--secondary-color);">آخر تحديث: مايو 2026</p>
+            </div>
+            <!-- Header English -->
+            <div class="header-title en" id="englishHeaderTitle">
+                <h1>Tamm</h1>
+                <p>HVAC & Solar Energy Services — Privacy Policy</p>
+                <p style="font-size: 12px; margin-top: 6px; color: var(--secondary-color);">Last Updated: May 2026</p>
             </div>
             <div class="language-toggle">
                 <button id="btnArabic" class="active" onclick="showArabic()">العربية</button>
@@ -656,11 +663,20 @@
             </div>
         </div>
 
-        <div class="footer">
-            <p>إصدار التطبيق - App Version: 1.2.0</p>
-            <p>آخر تحديث - Last Updated: مايو 2026 - May 2026</p>
+        <!-- Arabic Footer -->
+        <div class="footer" id="arabicFooter">
+            <p>إصدار التطبيق: 1.2.0</p>
+            <p>آخر تحديث: مايو 2026</p>
             <p>تمّ — خدمات التكييف والطاقة الشمسية</p>
-            <p style="margin-top: 20px;">&copy; 2026 Saleh Bagomri - جميع الحقوق محفوظة - All Rights Reserved</p>
+            <p style="margin-top: 20px;">&copy; 2026 Saleh Bagomri - جميع الحقوق محفوظة</p>
+        </div>
+
+        <!-- English Footer -->
+        <div class="footer en" id="englishFooter">
+            <p>App Version: 1.2.0</p>
+            <p>Last Updated: May 2026</p>
+            <p>Tamm — HVAC & Solar Energy Services</p>
+            <p style="margin-top: 20px;">&copy; 2026 Saleh Bagomri - All Rights Reserved</p>
         </div>
     </div>
 
@@ -670,28 +686,39 @@
             document.getElementById('englishContent').style.display = 'none';
             document.getElementById('arabicSidebar').style.display = 'block';
             document.getElementById('englishSidebar').style.display = 'none';
+            document.getElementById('arabicHeaderTitle').style.display = 'block';
+            document.getElementById('englishHeaderTitle').style.display = 'none';
+            document.getElementById('arabicFooter').style.display = 'block';
+            document.getElementById('englishFooter').style.display = 'none';
+            
             document.getElementById('btnArabic').classList.add('active');
             document.getElementById('btnEnglish').classList.remove('active');
             document.body.setAttribute('dir', 'rtl');
             document.documentElement.setAttribute('lang', 'ar');
-            updateActiveLink();
+            updateActiveLinkOnLanguageChange();
         }
+        
         function showEnglish() {
             document.getElementById('arabicContent').style.display = 'none';
             document.getElementById('englishContent').style.display = 'block';
             document.getElementById('arabicSidebar').style.display = 'none';
             document.getElementById('englishSidebar').style.display = 'block';
+            document.getElementById('arabicHeaderTitle').style.display = 'none';
+            document.getElementById('englishHeaderTitle').style.display = 'block';
+            document.getElementById('arabicFooter').style.display = 'none';
+            document.getElementById('englishFooter').style.display = 'block';
+            
             document.getElementById('btnArabic').classList.remove('active');
             document.getElementById('btnEnglish').classList.add('active');
             document.body.setAttribute('dir', 'ltr');
             document.documentElement.setAttribute('lang', 'en');
-            updateActiveLink();
+            updateActiveLinkOnLanguageChange();
         }
 
-        // Highlight active sidebar links on scroll
+        // Highlight active sidebar links on scroll using IntersectionObserver
         const observerOptions = {
             root: null,
-            rootMargin: '0px 0px -60% 0px',
+            rootMargin: '-10% 0px -70% 0px',
             threshold: 0
         };
 
@@ -701,8 +728,13 @@
                     const id = entry.target.getAttribute('id');
                     if (id) {
                         const isRtl = document.body.getAttribute('dir') === 'rtl';
+                        const prefix = isRtl ? 'ar-' : 'en-';
+                        
+                        // Ignore sections that don't belong to the active language
+                        if (!id.startsWith(prefix)) return;
+
                         const activeSidebar = isRtl ? 'arabicSidebar' : 'englishSidebar';
-                        document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+                        document.querySelectorAll(`#${activeSidebar} .sidebar-nav a`).forEach(a => a.classList.remove('active'));
                         const currentLink = document.querySelector(`#${activeSidebar} .sidebar-nav a[href="#${id}"]`);
                         if (currentLink) currentLink.classList.add('active');
                     }
@@ -714,23 +746,27 @@
             observer.observe(section);
         });
 
-        function updateActiveLink() {
-            const sections = Array.from(document.querySelectorAll('.section'));
+        function updateActiveLinkOnLanguageChange() {
             const isRtl = document.body.getAttribute('dir') === 'rtl';
+            const prefix = isRtl ? 'ar-' : 'en-';
+            const activeSidebar = isRtl ? 'arabicSidebar' : 'englishSidebar';
             
-            // Filter sections based on current language
-            const activeSections = sections.filter(s => {
-                return isRtl ? s.id.startsWith('ar-') : s.id.startsWith('en-');
-            });
-
-            const visibleSection = activeSections.find(s => {
+            // Find which section is currently closest to the top of the viewport
+            const sections = Array.from(document.querySelectorAll('.section')).filter(s => s.id.startsWith(prefix));
+            let currentSection = sections[0];
+            let minDiff = Infinity;
+            
+            sections.forEach(s => {
                 const rect = s.getBoundingClientRect();
-                return rect.top >= -100 && rect.top <= window.innerHeight * 0.4;
-            }) || activeSections[0];
+                const diff = Math.abs(rect.top);
+                if (diff < minDiff) {
+                    minDiff = diff;
+                    currentSection = s;
+                }
+            });
             
-            if (visibleSection) {
-                const id = visibleSection.getAttribute('id');
-                const activeSidebar = isRtl ? 'arabicSidebar' : 'englishSidebar';
+            if (currentSection) {
+                const id = currentSection.getAttribute('id');
                 document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
                 const currentLink = document.querySelector(`#${activeSidebar} .sidebar-nav a[href="#${id}"]`);
                 if (currentLink) currentLink.classList.add('active');
@@ -749,15 +785,12 @@
                     });
                     
                     // Manually set active class
-                    document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+                    const isRtl = document.body.getAttribute('dir') === 'rtl';
+                    const activeSidebar = isRtl ? 'arabicSidebar' : 'englishSidebar';
+                    document.querySelectorAll(`#${activeSidebar} .sidebar-nav a`).forEach(a => a.classList.remove('active'));
                     this.classList.add('active');
                 }
             });
-        });
-
-        // Listen for scroll to update sidebar dynamically
-        window.addEventListener('scroll', () => {
-            updateActiveLink();
         });
 
         showArabic();
